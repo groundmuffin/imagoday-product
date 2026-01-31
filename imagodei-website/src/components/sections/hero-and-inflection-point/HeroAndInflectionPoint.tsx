@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type {
   Conference,
   Hero,
@@ -115,11 +115,21 @@ export function HeroAndInflectionPoint({
 }: HeroAndInflectionPointProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const imgRef = useRef<HTMLImageElement>(null)
+
+  // Check if image is already cached/loaded on mount
+  useEffect(() => {
+    const img = imgRef.current
+    if (img && img.complete && img.naturalWidth > 0) {
+      setImageLoaded(true)
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       {/* Preload background image */}
       <img
+        ref={imgRef}
         src={hero.backgroundImageUrl}
         alt=""
         className="hidden"

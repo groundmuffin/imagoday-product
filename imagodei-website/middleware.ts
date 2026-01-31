@@ -1,14 +1,13 @@
 import createMiddleware from 'next-intl/middleware'
+import { NextRequest, NextResponse } from 'next/server'
 import { routing } from './src/i18n/routing'
 
-export default createMiddleware(routing)
+const intlMiddleware = createMiddleware(routing)
+
+export default function middleware(request: NextRequest) {
+  return intlMiddleware(request)
+}
 
 export const config = {
-  // Match all pathnames except for
-  // - API routes
-  // - _next static files
-  // - _next images
-  // - favicon.ico
-  // - public files with extensions
-  matcher: ['/', '/(ro|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
+  matcher: ['/', '/(ro|en)/:path*']
 }
