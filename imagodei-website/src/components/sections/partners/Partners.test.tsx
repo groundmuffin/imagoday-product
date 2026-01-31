@@ -240,7 +240,7 @@ describe('Partners Section', () => {
         />
       )
       const section = container.querySelector('section')
-      expect(section?.className).toContain('bg-zinc-50')
+      expect(section?.className).toContain('bg-zinc-100')
     })
 
     it('has decorative gradient blobs', () => {

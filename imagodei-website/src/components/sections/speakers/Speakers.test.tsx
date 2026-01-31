@@ -245,7 +245,8 @@ describe('SpeakerCard Component', () => {
   it('renders speaker photo with alt text', () => {
     render(<SpeakerCard speaker={mockSpeaker} translations={cardTranslations} />)
     const image = screen.getByRole('img', { name: mockSpeaker.name })
-    expect(image).toHaveAttribute('src', mockSpeaker.photo)
+    // Next.js Image component transforms src to optimized URL
+    expect(image.getAttribute('src')).toContain(encodeURIComponent(mockSpeaker.photo))
   })
 
   it('renders speaker name in bold', () => {

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import type { Speaker } from '@/types'
 import { ChevronDown, User } from 'lucide-react'
 
@@ -72,10 +73,12 @@ export function SpeakerCard({
         >
           {/* Duotone base layer - using slightly different color for non-featured */}
           <div className={`absolute inset-0 bg-gradient-to-br ${featured ? 'from-sky-900 to-cyan-800' : 'from-zinc-800 to-sky-900'}`} />
-          <img
+          <Image
             src={speaker.photo}
             alt={speaker.name}
-            className="relative w-full h-full object-cover object-center grayscale mix-blend-luminosity transition-all duration-500 group-hover:scale-105 group-hover:grayscale-[50%]"
+            fill
+            sizes={featured ? '(max-width: 640px) 100vw, 192px' : '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'}
+            className="object-cover object-center grayscale mix-blend-luminosity transition-all duration-500 group-hover:scale-105 group-hover:grayscale-[50%]"
           />
           {/* Subtle overlay gradient for depth */}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent" />
@@ -93,18 +96,16 @@ export function SpeakerCard({
           {/* Name */}
           <h3
             className={`
-              font-bold text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-sky-100
+              font-bold text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-sky-100 font-heading
               ${featured ? 'text-xl sm:text-2xl md:text-3xl' : 'text-lg sm:text-xl'}
             `}
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {speaker.name}
           </h3>
 
           {/* Title */}
           <p
-            className={`text-zinc-400 leading-relaxed ${featured ? 'text-sm sm:text-base' : 'text-sm'}`}
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className={`text-zinc-400 leading-relaxed font-body ${featured ? 'text-sm sm:text-base' : 'text-sm'}`}
           >
             {speaker.title}
           </p>
@@ -112,7 +113,7 @@ export function SpeakerCard({
           {/* Expand indicator with icon */}
           <div className="flex items-center gap-2 mt-4 text-xs text-zinc-500 transition-colors duration-300 group-hover:text-sky-400">
             <User className="w-3.5 h-3.5" strokeWidth={1.5} />
-            <span style={{ fontFamily: "'Inter', sans-serif" }}>
+            <span className="font-body">
               {isExpanded ? translations.clickToCollapse : translations.clickToReadBio}
             </span>
             <ChevronDown
@@ -129,10 +130,7 @@ export function SpeakerCard({
             `}
           >
             <div className="pt-4 border-t border-zinc-800">
-              <p
-                className="text-sm sm:text-base text-zinc-300 leading-relaxed"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-body">
                 {speaker.bio}
               </p>
             </div>

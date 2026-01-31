@@ -44,27 +44,24 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         {/* Section Header */}
         <header className="text-center mb-12 sm:mb-16 lg:mb-20">
           <span
-            className={`inline-block text-sm font-medium uppercase tracking-widest text-sky-400 mb-4 ${
+            className={`inline-block text-sm font-medium uppercase tracking-widest text-sky-400 mb-4 font-body ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.subtitle}
           </span>
           <h2
             id="speakers-heading"
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 ${
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-heading ${
               isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {translations.title}
           </h2>
           <p
-            className={`text-lg text-zinc-400 max-w-2xl mx-auto ${
+            className={`text-lg text-zinc-400 max-w-2xl mx-auto font-body ${
               isVisible ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.description}
           </p>
@@ -74,10 +71,9 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         {featuredSpeakers.length > 0 && (
           <div className="mb-12 sm:mb-16">
             <h3
-              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 ${
+              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 font-body ${
                 isVisible ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'
               }`}
-              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {translations.keynoteSpeakers}
             </h3>
@@ -105,10 +101,9 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         {otherSpeakers.length > 0 && (
           <div>
             <h3
-              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 ${
+              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 font-body ${
                 isVisible ? 'animate-fade-in-up animation-delay-500' : 'opacity-0'
               }`}
-              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {translations.facilitators}
             </h3>
@@ -132,27 +127,6 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         )}
       </div>
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-100 { animation-delay: 0.1s; }
-        .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-300 { animation-delay: 0.3s; }
-        .animation-delay-500 { animation-delay: 0.5s; }
-      `}</style>
     </section>
   )
 }

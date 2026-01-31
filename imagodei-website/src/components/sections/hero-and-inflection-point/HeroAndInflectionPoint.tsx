@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
+import Image from 'next/image'
 import type {
   Conference,
   Hero,
@@ -9,9 +10,6 @@ import type {
   CtaButton,
 } from '@/types'
 
-// Typography from design tokens: Space Grotesk (heading), Inter (body)
-const fontHeading = { fontFamily: "'Space Grotesk', sans-serif" }
-const fontBody = { fontFamily: "'Inter', sans-serif" }
 
 // Consistent content width across all sections
 const contentWidth = 'max-w-5xl mx-auto px-6'
@@ -20,10 +18,10 @@ const contentWidth = 'max-w-5xl mx-auto px-6'
  * Renders text with {{highlighted}} portions styled distinctively.
  * This avoids dangerouslySetInnerHTML and XSS risks.
  */
-function renderStyledText(text: string, className: string, style: React.CSSProperties, key: number) {
+function renderStyledText(text: string, className: string, key: number) {
   const parts = text.split(/(\{\{[^}]+\}\})/)
   return (
-    <p key={key} className={className} style={style}>
+    <p key={key} className={className}>
       {parts.map((part, index) => {
         if (part.startsWith('{{') && part.endsWith('}}')) {
           const content = part.slice(2, -2)
@@ -66,8 +64,7 @@ function CtaButtonComponent({
   return (
     <button
       onClick={handleClick}
-      className={`${baseClasses} ${variantClasses}`}
-      style={fontHeading}
+      className={`${baseClasses} ${variantClasses} font-heading`}
     >
       {cta.label}
     </button>
@@ -85,10 +82,7 @@ function Divider() {
 function ScrollIndicator({ label }: { label: string }) {
   return (
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in-up animation-delay-700">
-      <span
-        className="text-xs tracking-[0.2em] uppercase text-zinc-500"
-        style={fontHeading}
-      >
+      <span className="text-xs tracking-[0.2em] uppercase text-zinc-500 font-heading">
         {label}
       </span>
       <div className="w-px h-8 bg-gradient-to-b from-zinc-500 to-transparent animate-pulse" />
@@ -115,44 +109,32 @@ export function HeroAndInflectionPoint({
 }: HeroAndInflectionPointProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
-  const imgRef = useRef<HTMLImageElement>(null)
-
-  // Check if image is already cached/loaded on mount
-  useEffect(() => {
-    const img = imgRef.current
-    if (img && img.complete && img.naturalWidth > 0) {
-      setImageLoaded(true)
-    }
-  }, [])
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
-      {/* Preload background image */}
-      <img
-        ref={imgRef}
-        src={hero.backgroundImageUrl}
-        alt=""
-        className="hidden"
-        onLoad={() => setImageLoaded(true)}
-        onError={() => setImageError(true)}
-      />
-
       {/* Hero Section */}
       <section
-        className="relative min-h-[100svh] md:min-h-[85vh] flex flex-col items-center justify-center"
+        className="relative min-h-[100svh] md:min-h-[85vh] flex flex-col items-center justify-center overflow-hidden"
         role="img"
         aria-label={hero.backgroundAlt}
       >
         {/* Background Image */}
         <div
-          className={`hero-background absolute inset-0 bg-no-repeat transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ${
             imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{
-            backgroundImage: `url(${hero.backgroundImageUrl})`,
-            backgroundPosition: '52% 35%',
-          }}
-        />
+        >
+          <Image
+            src={hero.backgroundImageUrl}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[52%_35%] md:object-[52%_35%] md:scale-[2]"
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        </div>
 
         {/* Fallback gradient if image fails */}
         {imageError && (
@@ -179,9 +161,8 @@ export function HeroAndInflectionPoint({
         <div className={`relative z-10 text-center ${contentWidth}`}>
           {/* Conference Label */}
           <p
-            className="text-xs tracking-[0.3em] uppercase text-zinc-300 mb-8 animate-fade-in-up"
+            className="text-xs tracking-[0.3em] uppercase text-zinc-300 mb-8 animate-fade-in-up font-heading"
             style={{
-              ...fontHeading,
               textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.6)',
             }}
           >
@@ -189,10 +170,7 @@ export function HeroAndInflectionPoint({
           </p>
 
           {/* Conference Name */}
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-2 animate-fade-in-up animation-delay-100"
-            style={fontHeading}
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-2 animate-fade-in-up animation-delay-100 font-heading">
             {conference.nameParts.map((part, index) => (
               <span
                 key={index}
@@ -204,18 +182,12 @@ export function HeroAndInflectionPoint({
           </h1>
 
           {/* Tagline */}
-          <p
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-400 font-light italic mb-8 animate-fade-in-up animation-delay-200"
-            style={fontBody}
-          >
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-400 font-light italic mb-8 animate-fade-in-up animation-delay-200 font-body">
             {conference.tagline}
           </p>
 
           {/* Date & Location */}
-          <p
-            className="text-sm sm:text-base text-zinc-400 mb-12 animate-fade-in-up animation-delay-300"
-            style={fontBody}
-          >
+          <p className="text-sm sm:text-base text-zinc-400 mb-12 animate-fade-in-up animation-delay-300 font-body">
             <span className="font-medium text-zinc-300">{conference.dateDisplay}</span>
             <span className="mx-3 text-zinc-600">|</span>
             <span>{conference.location}</span>
@@ -246,10 +218,7 @@ export function HeroAndInflectionPoint({
       <section className="bg-zinc-900/50 py-16" aria-labelledby="about-heading">
         <h2 id="about-heading" className="sr-only">Despre conferință</h2>
         <div className={contentWidth}>
-          <p
-            className="text-xl sm:text-2xl leading-relaxed text-zinc-300"
-            style={fontBody}
-          >
+          <p className="text-xl sm:text-2xl leading-relaxed text-zinc-300 font-body">
             {about.text}{' '}
             {about.highlights.map((segment, index) =>
               segment.highlighted ? (
@@ -272,8 +241,7 @@ export function HeroAndInflectionPoint({
           {/* Section Title - last word highlighted in secondary color */}
           <h2
             id="manifesto-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12"
-            style={fontHeading}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 font-heading"
           >
             {(() => {
               const words = manifesto.sectionTitle.split(' ')
@@ -295,8 +263,7 @@ export function HeroAndInflectionPoint({
               {manifesto.leftColumn.paragraphs.map((paragraph, index) =>
                 renderStyledText(
                   paragraph,
-                  'text-base sm:text-lg leading-relaxed text-zinc-400',
-                  fontBody,
+                  'text-base sm:text-lg leading-relaxed text-zinc-400 font-body',
                   index
                 )
               )}
@@ -307,10 +274,9 @@ export function HeroAndInflectionPoint({
               {manifesto.rightColumn.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className={`text-base sm:text-lg leading-relaxed text-zinc-400 ${
+                  className={`text-base sm:text-lg leading-relaxed text-zinc-400 font-body ${
                     manifesto.rightColumn.isItalic ? 'italic' : ''
                   }`}
-                  style={fontBody}
                 >
                   {paragraph}
                 </p>
@@ -320,38 +286,6 @@ export function HeroAndInflectionPoint({
         </div>
       </section>
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-100 { animation-delay: 0.1s; }
-        .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-300 { animation-delay: 0.3s; }
-        .animation-delay-400 { animation-delay: 0.4s; }
-        .animation-delay-700 { animation-delay: 0.7s; }
-
-        /* Responsive hero background */
-        .hero-background {
-          background-size: cover;
-        }
-        @media (min-width: 768px) {
-          .hero-background {
-            background-size: 200%;
-          }
-        }
-      `}</style>
     </div>
   )
 }

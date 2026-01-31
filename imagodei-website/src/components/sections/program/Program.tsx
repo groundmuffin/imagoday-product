@@ -31,27 +31,24 @@ export function Program({ days, translations }: ProgramProps) {
         {/* Section Header */}
         <header className="mb-12 text-center sm:mb-16 lg:mb-20">
           <span
-            className={`mb-4 inline-block text-sm font-medium uppercase tracking-widest text-sky-400 ${
+            className={`mb-4 inline-block text-sm font-medium uppercase tracking-widest text-sky-400 font-body ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.subtitle}
           </span>
           <h2
             id="program-heading"
-            className={`mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl ${
+            className={`mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl font-heading ${
               isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {translations.title}
           </h2>
           <p
-            className={`mx-auto max-w-2xl text-lg text-zinc-400 ${
+            className={`mx-auto max-w-2xl text-lg text-zinc-400 font-body ${
               isVisible ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.description}
           </p>
@@ -72,36 +69,13 @@ export function Program({ days, translations }: ProgramProps) {
           </div>
         ) : (
           <div className={`text-center ${isVisible ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'}`}>
-            <p
-              className="text-lg text-zinc-500"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
+            <p className="text-lg text-zinc-500 font-body">
               {translations.comingSoon}
             </p>
           </div>
         )}
       </div>
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-100 { animation-delay: 0.1s; }
-        .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-300 { animation-delay: 0.3s; }
-      `}</style>
     </section>
   )
 }

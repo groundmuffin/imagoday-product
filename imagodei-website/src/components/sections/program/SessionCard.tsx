@@ -46,10 +46,7 @@ export function SessionCard({ session }: SessionCardProps) {
       </div>
 
       {/* Session title */}
-      <span
-        className="text-base text-zinc-300 sm:text-lg transition-colors duration-200 group-hover:text-white"
-        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-      >
+      <span className="text-base text-zinc-300 sm:text-lg transition-colors duration-200 group-hover:text-white font-heading">
         {session.title}
       </span>
     </div>

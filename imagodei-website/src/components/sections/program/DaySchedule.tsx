@@ -19,26 +19,17 @@ export function DaySchedule({ day }: DayScheduleProps) {
         <header className="mb-6 sm:mb-8 relative">
           {/* Day label and date */}
           <div className="mb-2 flex items-baseline justify-between gap-4">
-            <h3
-              className="text-2xl font-bold text-white sm:text-3xl transition-colors duration-300 group-hover:text-sky-50"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
+            <h3 className="text-2xl font-bold text-white sm:text-3xl transition-colors duration-300 group-hover:text-sky-50 font-heading">
               {day.label}
             </h3>
-            <span
-              className="whitespace-nowrap text-sm font-medium text-sky-400 transition-colors duration-300 group-hover:text-sky-300"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
+            <span className="whitespace-nowrap text-sm font-medium text-sky-400 transition-colors duration-300 group-hover:text-sky-300 font-body">
               {day.date}
             </span>
           </div>
 
           {/* Time frame */}
           {day.timeFrame && (
-            <p
-              className="text-sm uppercase tracking-wide text-zinc-500"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
+            <p className="text-sm uppercase tracking-wide text-zinc-500 font-body">
               {day.timeFrame}
             </p>
           )}
@@ -64,23 +55,6 @@ export function DaySchedule({ day }: DayScheduleProps) {
       {/* Accent line at bottom on hover */}
       <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.5s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
     </article>
   )
 }

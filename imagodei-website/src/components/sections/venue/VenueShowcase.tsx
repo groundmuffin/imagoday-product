@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import type { Venue } from '@/types'
 import { MapPin, ExternalLink } from 'lucide-react'
 
@@ -30,10 +31,13 @@ export function VenueShowcase({ venue, translations, onGetDirections }: VenueSho
     <section id="venue" className="relative min-h-screen w-full overflow-hidden">
       {/* Background Photo with Artistic Overlay */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={venue.photoUrl}
           alt={venue.photoAlt}
-          className="h-full w-full object-cover"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
         />
         {/* Gradient overlays for depth and text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
@@ -54,18 +58,12 @@ export function VenueShowcase({ venue, translations, onGetDirections }: VenueSho
           </div>
 
           {/* Venue Name — Display Typography */}
-          <h2
-            className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-          >
+          <h2 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl font-heading">
             {venue.name}
           </h2>
 
           {/* Description with Refined Styling */}
-          <p
-            className="mb-10 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl md:text-2xl"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl md:text-2xl font-body">
             {venue.description}
           </p>
 

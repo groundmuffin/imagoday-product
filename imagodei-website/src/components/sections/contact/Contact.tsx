@@ -13,7 +13,6 @@ export interface ContactProps {
   onEmailClick?: (email: string) => void
 }
 
-const fontHeading = { fontFamily: "'Space Grotesk', sans-serif" }
 
 export function Contact({ closingQuote, contacts, onEmailClick }: ContactProps) {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.2 })
@@ -34,11 +33,10 @@ export function Contact({ closingQuote, contacts, onEmailClick }: ContactProps) 
       <div className="relative z-10 flex max-w-3xl flex-col items-center text-center">
         {/* Decorative Quotation Mark */}
         <div
-          className={`mb-8 text-8xl font-bold leading-none text-sky-500/20 sm:mb-10 sm:text-9xl ${
+          className={`mb-8 text-8xl font-bold leading-none text-sky-500/20 sm:mb-10 sm:text-9xl font-heading ${
             isVisible ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           aria-hidden="true"
-          style={fontHeading}
         >
           &ldquo;
         </div>
@@ -47,10 +45,9 @@ export function Contact({ closingQuote, contacts, onEmailClick }: ContactProps) 
         <blockquote className="mb-12 sm:mb-16">
           <p
             id="contact-heading"
-            className={`text-xl font-medium italic leading-relaxed tracking-wide text-zinc-100 sm:text-2xl md:text-3xl lg:text-4xl ${
+            className={`text-xl font-medium italic leading-relaxed tracking-wide text-zinc-100 sm:text-2xl md:text-3xl lg:text-4xl font-heading ${
               isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
             }`}
-            style={fontHeading}
           >
             {closingQuote}
           </p>
@@ -89,25 +86,6 @@ export function Contact({ closingQuote, contacts, onEmailClick }: ContactProps) 
       {/* Bottom accent line */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-100 { animation-delay: 0.1s; }
-        .animation-delay-200 { animation-delay: 0.2s; }
-      `}</style>
     </section>
   )
 }

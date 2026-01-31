@@ -9,6 +9,7 @@ interface MobileNavProps {
   navigationItems: NavigationItem[]
   registerUrl: string
   registerLabel: string
+  languageLabel: string
   currentLanguage: 'en' | 'ro'
   onLanguageChange?: (lang: 'en' | 'ro') => void
   onNavigate?: (href: string) => void
@@ -20,6 +21,7 @@ export function MobileNav({
   navigationItems,
   registerUrl,
   registerLabel,
+  languageLabel,
   currentLanguage,
   onLanguageChange,
   onNavigate,
@@ -39,10 +41,7 @@ export function MobileNav({
       <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-zinc-50 p-6 shadow-xl dark:bg-zinc-900">
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
-          <span
-            className="text-xl font-bold text-zinc-900 dark:text-zinc-100"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
+          <span className="text-xl font-bold text-zinc-900 dark:text-zinc-100 font-heading">
             Menu
           </span>
           <button
@@ -64,12 +63,11 @@ export function MobileNav({
                 e.preventDefault()
                 onNavigate?.(item.href)
               }}
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-colors font-heading ${
                 item.isActive
                   ? 'text-sky-600 dark:text-sky-400'
                   : 'text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100'
               }`}
-              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               {item.label}
             </a>
@@ -78,11 +76,8 @@ export function MobileNav({
 
         {/* Language Switcher */}
         <div className="mb-8">
-          <p
-            className="mb-2 text-sm text-zinc-500 dark:text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            Language
+          <p className="mb-2 text-sm text-zinc-500 dark:text-zinc-400 font-body">
+            {languageLabel}
           </p>
           <LanguageSwitcher
             currentLanguage={currentLanguage}
@@ -95,8 +90,7 @@ export function MobileNav({
           href={registerUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full rounded-full bg-sky-600 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600"
-          style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+          className="block w-full rounded-full bg-sky-600 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600 font-heading"
         >
           {registerLabel}
         </a>

@@ -7,7 +7,8 @@
     "contact": "Contact"
   },
   "actions": {
-    "register": "Înregistrare"
+    "register": "Înregistrare",
+    "language": "Limbă"
   },
   "sections": {
     "hero": {

@@ -46,6 +46,7 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
       navigationItems={navigationItems}
       registerUrl="https://example.com/register"
       registerLabel={t('actions.register')}
+      languageLabel={t('actions.language')}
       logoText="Imago Dei"
       currentLanguage={locale}
       onLanguageChange={handleLanguageChange}

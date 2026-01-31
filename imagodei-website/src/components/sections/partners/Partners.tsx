@@ -16,7 +16,6 @@ export interface PartnersProps {
   }
 }
 
-const fontHeading = { fontFamily: "'Space Grotesk', sans-serif" }
 
 export function Partners({
   partnershipPhilosophy,
@@ -48,10 +47,9 @@ export function Partners({
         <header className="mb-16 sm:mb-20 lg:mb-24">
           <h2
             id="partners-heading"
-            className={`mb-8 text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl md:text-5xl ${
+            className={`mb-8 text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl md:text-5xl font-heading ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
-            style={fontHeading}
           >
             {partnershipPhilosophy.headline}
           </h2>
@@ -97,10 +95,7 @@ export function Partners({
               isVisible ? 'animate-fade-in-up animation-delay-700' : 'opacity-0'
             }`}
           >
-            <h3
-              className="mb-6 text-xl font-bold text-zinc-900 sm:text-2xl"
-              style={fontHeading}
-            >
+            <h3 className="mb-6 text-xl font-bold text-zinc-900 sm:text-2xl font-heading">
               {targetAudience.headline}
             </h3>
             <p className="text-lg leading-relaxed text-zinc-600 sm:text-xl">
@@ -149,27 +144,6 @@ export function Partners({
         )}
       </div>
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-100 { animation-delay: 0.1s; }
-        .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-700 { animation-delay: 0.7s; }
-        .animation-delay-900 { animation-delay: 0.9s; }
-      `}</style>
     </section>
   )
 }

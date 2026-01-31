@@ -29,10 +29,9 @@ export function Objectives({ sectionTitle, sectionDescription, objectives }: Obj
         <header className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h2
             id="objectives-heading"
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 ${
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-heading ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {sectionTitle}
           </h2>
@@ -81,24 +80,6 @@ export function Objectives({ sectionTitle, sectionDescription, objectives }: Obj
         )}
       </div>
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-100 { animation-delay: 0.1s; }
-      `}</style>
     </section>
   )
 }

@@ -15,6 +15,7 @@ export interface AppShellProps {
   navigationItems: NavigationItem[]
   registerUrl?: string
   registerLabel?: string
+  languageLabel?: string
   logoText?: string
   currentLanguage?: 'en' | 'ro'
   onLanguageChange?: (lang: 'en' | 'ro') => void
@@ -26,6 +27,7 @@ export function AppShell({
   navigationItems,
   registerUrl = '#',
   registerLabel = 'Register',
+  languageLabel = 'Language',
   logoText = 'Imago Dei',
   currentLanguage = 'en',
   onLanguageChange,
@@ -66,6 +68,7 @@ export function AppShell({
         navigationItems={navigationItems}
         registerUrl={registerUrl}
         registerLabel={registerLabel}
+        languageLabel={languageLabel}
         currentLanguage={currentLanguage}
         onLanguageChange={onLanguageChange}
         onNavigate={handleNavigate}

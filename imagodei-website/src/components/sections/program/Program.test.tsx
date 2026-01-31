@@ -200,10 +200,10 @@ describe('SessionCard Component', () => {
     expect(screen.getByText(mockSession.title)).toBeInTheDocument()
   })
 
-  it('renders bullet point in sky color', () => {
+  it('renders icon in sky color theme', () => {
     const { container } = render(<SessionCard session={mockSession} />)
-    const bullet = container.querySelector('.bg-sky-400\\/60')
-    expect(bullet).toBeInTheDocument()
+    const iconContainer = container.querySelector('.bg-sky-500\\/10')
+    expect(iconContainer).toBeInTheDocument()
   })
 
   it('has consistent spacing', () => {

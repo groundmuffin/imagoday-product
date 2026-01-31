@@ -60,7 +60,8 @@ describe('VenueShowcase', () => {
       )
       const img = screen.getByRole('img', { name: mockVenue.photoAlt })
       expect(img).toBeInTheDocument()
-      expect(img).toHaveAttribute('src', mockVenue.photoUrl)
+      // Next.js Image component transforms src to optimized URL
+      expect(img.getAttribute('src')).toContain(encodeURIComponent(mockVenue.photoUrl))
     })
 
     it('renders the Get Directions button', () => {
@@ -203,7 +204,8 @@ describe('VenueShowcase', () => {
         />
       )
       const img = screen.getByRole('img')
-      expect(img).toHaveAttribute('src', '/images/alternate-venue.jpg')
+      // Next.js Image component transforms src to optimized URL
+      expect(img.getAttribute('src')).toContain(encodeURIComponent('/images/alternate-venue.jpg'))
     })
   })
 })
