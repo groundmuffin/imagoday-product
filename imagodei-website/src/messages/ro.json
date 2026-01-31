@@ -10,6 +10,63 @@
     "register": "Înregistrare"
   },
   "sections": {
+    "hero": {
+      "conference": {
+        "label": "Conferință Internațională",
+        "nameParts": [
+          { "text": "Imago ", "accent": false },
+          { "text": "Dei", "accent": true },
+          { "text": " 2.0", "accent": false }
+        ],
+        "tagline": "Inflection Point",
+        "dateDisplay": "6-7 Martie 2026",
+        "startDate": "2026-03-06",
+        "endDate": "2026-03-07",
+        "location": "Oradea, România"
+      },
+      "hero": {
+        "backgroundImageUrl": "/images/creation-of-adam.jpg",
+        "backgroundAlt": "Crearea lui Adam de Michelangelo - celebra frescă care arată mâinile lui Dumnezeu și Adam întinzându-se una către cealaltă",
+        "scrollHint": "Descoperă",
+        "primaryCta": {
+          "label": "Înregistrare",
+          "url": "https://register.imagodei20.org",
+          "external": true
+        },
+        "secondaryCta": {
+          "label": "Vezi Programul",
+          "url": "#program",
+          "external": false
+        }
+      },
+      "about": {
+        "text": "O conferință care aduce împreună perspective din tehnologie, etică și teologie pentru a discuta despre",
+        "highlights": [
+          { "text": "inteligența artificială", "highlighted": true },
+          { "text": ", ", "highlighted": false },
+          { "text": "umanitate", "highlighted": true },
+          { "text": " și ", "highlighted": false },
+          { "text": "responsabilitate morală", "highlighted": true },
+          { "text": ".", "highlighted": false }
+        ]
+      },
+      "manifesto": {
+        "sectionTitle": "Punctul de Inflexiune",
+        "leftColumn": {
+          "paragraphs": [
+            "Există momente rare în istorie în care progresul tehnologic schimbă felul în care ne înțelegem pe noi înșine.",
+            "În era inteligenței artificiale, întrebările fundamentale despre {{Imago Dei}} intră într-o nouă etapă — una în care omul încearcă să creeze inteligență după propriul chip."
+          ]
+        },
+        "rightColumn": {
+          "paragraphs": [
+            "Explorăm modul în care avansul rapid al AI ne provoacă să regândim ce înseamnă să fim umani, precum și responsabilitatea morală pe care o avem într-un moment de inflexiune istorică."
+          ],
+          "isItalic": true
+        }
+      },
+      "aboutHeading": "Despre conferință"
+    },
     "speakers": {
       "title": "Speakeri"
     },

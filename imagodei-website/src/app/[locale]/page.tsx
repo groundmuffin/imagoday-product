@@ -1,4 +1,5 @@
-import { setRequestLocale } from 'next-intl/server'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
+import { HeroSection } from './HeroSection'
 
 type Params = Promise<{ locale: string }>
 
@@ -6,28 +7,41 @@ export default async function HomePage({ params }: { params: Params }) {
   const { locale } = await params
   setRequestLocale(locale)
 
+  const t = await getTranslations('sections.hero')
+
+  // Get hero section data from translations
+  const heroData = {
+    conference: {
+      label: t('conference.label'),
+      nameParts: t.raw('conference.nameParts'),
+      tagline: t('conference.tagline'),
+      dateDisplay: t('conference.dateDisplay'),
+      startDate: t('conference.startDate'),
+      endDate: t('conference.endDate'),
+      location: t('conference.location'),
+    },
+    hero: {
+      backgroundImageUrl: t('hero.backgroundImageUrl'),
+      backgroundAlt: t('hero.backgroundAlt'),
+      scrollHint: t('hero.scrollHint'),
+      primaryCta: t.raw('hero.primaryCta'),
+      secondaryCta: t.raw('hero.secondaryCta'),
+    },
+    about: {
+      text: t('about.text'),
+      highlights: t.raw('about.highlights'),
+    },
+    manifesto: {
+      sectionTitle: t('manifesto.sectionTitle'),
+      leftColumn: t.raw('manifesto.leftColumn'),
+      rightColumn: t.raw('manifesto.rightColumn'),
+    },
+  }
+
   return (
-    <div className="pt-16 md:pt-20">
-      {/* Hero Section Placeholder */}
-      <section
-        id="hero"
-        className="flex min-h-screen items-center justify-center bg-zinc-900"
-      >
-        <div className="text-center">
-          <h1
-            className="text-4xl font-bold text-zinc-100 md:text-6xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
-            Imago Dei 2.0
-          </h1>
-          <p
-            className="mt-4 text-xl text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            Hero Section Placeholder
-          </p>
-        </div>
-      </section>
+    <div>
+      {/* Hero & Inflection Point Section */}
+      <HeroSection data={heroData} />
 
       {/* Speakers Section Placeholder */}
       <section

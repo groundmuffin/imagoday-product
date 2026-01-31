@@ -10,6 +10,63 @@
     "register": "Register"
   },
   "sections": {
+    "hero": {
+      "conference": {
+        "label": "International Conference",
+        "nameParts": [
+          { "text": "Imago ", "accent": false },
+          { "text": "Dei", "accent": true },
+          { "text": " 2.0", "accent": false }
+        ],
+        "tagline": "Inflection Point",
+        "dateDisplay": "March 6-7, 2026",
+        "startDate": "2026-03-06",
+        "endDate": "2026-03-07",
+        "location": "Oradea, Romania"
+      },
+      "hero": {
+        "backgroundImageUrl": "/images/creation-of-adam.jpg",
+        "backgroundAlt": "Michelangelo's Creation of Adam - the iconic fresco showing the hands of God and Adam reaching toward each other",
+        "scrollHint": "Discover",
+        "primaryCta": {
+          "label": "Register",
+          "url": "https://register.imagodei20.org",
+          "external": true
+        },
+        "secondaryCta": {
+          "label": "View Program",
+          "url": "#program",
+          "external": false
+        }
+      },
+      "about": {
+        "text": "A conference that brings together perspectives from technology, ethics, and theology to discuss",
+        "highlights": [
+          { "text": "artificial intelligence", "highlighted": true },
+          { "text": ", ", "highlighted": false },
+          { "text": "humanity", "highlighted": true },
+          { "text": ", and ", "highlighted": false },
+          { "text": "moral responsibility", "highlighted": true },
+          { "text": ".", "highlighted": false }
+        ]
+      },
+      "manifesto": {
+        "sectionTitle": "The Inflection Point",
+        "leftColumn": {
+          "paragraphs": [
+            "There are rare moments in history when technological progress changes the way we understand ourselves.",
+            "In the age of artificial intelligence, fundamental questions about {{Imago Dei}} enter a new phase — one in which humanity attempts to create intelligence in its own image."
+          ]
+        },
+        "rightColumn": {
+          "paragraphs": [
+            "We explore how the rapid advance of AI challenges us to rethink what it means to be human, as well as the moral responsibility we carry at this historic inflection point."
+          ],
+          "isItalic": true
+        }
+      },
+      "aboutHeading": "About the conference"
+    },
     "speakers": {
       "title": "Speakers"
     },
