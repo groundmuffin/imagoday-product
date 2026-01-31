@@ -189,7 +189,18 @@
       ]
     },
     "venue": {
-      "title": "Locație"
+      "title": "Locație",
+      "getDirections": "Obține Indicații",
+      "data": {
+        "id": "venue-001",
+        "name": "Palatul Episcopal Romano Catolic",
+        "city": "Oradea",
+        "country": "România",
+        "description": "Un cadru arhitectural și cultural de excepție, găzduind colecția de artă eclesiastică — spațiu care încurajează contemplația și dialogul profund.",
+        "photoUrl": "/images/venue/episcopal-palace-interior.jpg",
+        "photoAlt": "Interiorul Palatului Episcopal Romano Catolic cu arhitectură barocă și detalii ornamentale",
+        "googleMapsUrl": "https://maps.google.com/?q=Palatul+Episcopal+Romano+Catolic+Oradea"
+      }
     },
     "partners": {
       "title": "Parteneri"

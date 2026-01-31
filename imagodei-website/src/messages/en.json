@@ -189,7 +189,18 @@
       ]
     },
     "venue": {
-      "title": "Venue"
+      "title": "Venue",
+      "getDirections": "Get Directions",
+      "data": {
+        "id": "venue-001",
+        "name": "Roman Catholic Episcopal Palace",
+        "city": "Oradea",
+        "country": "Romania",
+        "description": "An exceptional architectural and cultural setting, housing the ecclesiastical art collection — a space that encourages contemplation and deep dialogue.",
+        "photoUrl": "/images/venue/episcopal-palace-interior.jpg",
+        "photoAlt": "Interior of the Roman Catholic Episcopal Palace showing baroque architecture and ornate details",
+        "googleMapsUrl": "https://maps.google.com/?q=Palatul+Episcopal+Romano+Catolic+Oradea"
+      }
     },
     "partners": {
       "title": "Partners"

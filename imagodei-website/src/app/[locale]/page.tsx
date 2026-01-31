@@ -3,6 +3,7 @@ import { HeroSection } from './HeroSection'
 import { Objectives } from '@/components/sections/objectives'
 import { SpeakersSection } from './SpeakersSection'
 import { Program } from '@/components/sections/program'
+import { VenueSection } from './VenueSection'
 
 type Params = Promise<{ locale: string }>
 
@@ -14,6 +15,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const tObjectives = await getTranslations('sections.objectives')
   const tSpeakers = await getTranslations('sections.speakers')
   const tProgram = await getTranslations('sections.program')
+  const tVenue = await getTranslations('sections.venue')
 
   // Get objectives section data from translations
   const objectivesData = {
@@ -44,6 +46,14 @@ export default async function HomePage({ params }: { params: Params }) {
       comingSoon: tProgram('comingSoon'),
     },
     days: tProgram.raw('days'),
+  }
+
+  // Get venue section data from translations
+  const venueData = {
+    translations: {
+      getDirections: tVenue('getDirections'),
+    },
+    venue: tVenue.raw('data'),
   }
 
   // Get hero section data from translations
@@ -98,26 +108,11 @@ export default async function HomePage({ params }: { params: Params }) {
         translations={programData.translations}
       />
 
-      {/* Venue Section Placeholder */}
-      <section
-        id="venue"
-        className="flex min-h-[50vh] items-center justify-center bg-zinc-800"
-      >
-        <div className="text-center">
-          <h2
-            className="text-3xl font-bold text-zinc-100 md:text-4xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
-            Venue
-          </h2>
-          <p
-            className="mt-2 text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            #venue section placeholder
-          </p>
-        </div>
-      </section>
+      {/* Venue Section */}
+      <VenueSection
+        venue={venueData.venue}
+        translations={venueData.translations}
+      />
 
       {/* Partners Section Placeholder */}
       <section
