@@ -98,16 +98,16 @@ export function Partners({
             <h3 className="mb-6 text-xl font-bold text-zinc-900 sm:text-2xl font-heading">
               {targetAudience.headline}
             </h3>
-            <p className="text-lg leading-relaxed text-zinc-600 sm:text-xl">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-lg text-zinc-600 sm:text-xl">
               {targetAudience.audiences.map((audience, index) => (
-                <span key={index}>
+                <span key={index} className="flex items-center whitespace-nowrap">
                   <span className="text-zinc-900">{audience}</span>
                   {index < targetAudience.audiences.length - 1 && (
-                    <span className="mx-3 text-sky-500">•</span>
+                    <span className="ml-2 text-sky-500">•</span>
                   )}
                 </span>
               ))}
-            </p>
+            </div>
           </div>
         </div>
 
