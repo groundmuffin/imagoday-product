@@ -159,7 +159,34 @@
       ]
     },
     "program": {
-      "title": "Program"
+      "title": "Two Days of Reflection",
+      "subtitle": "Conference Program",
+      "description": "A deep exploration of the relationship between artificial intelligence and human dignity",
+      "comingSoon": "Program coming soon",
+      "days": [
+        {
+          "id": "day-1",
+          "label": "Day 1",
+          "date": "March 6",
+          "timeFrame": "Evening",
+          "sessions": [
+            { "id": "session-1-1", "title": "Keynotes" },
+            { "id": "session-1-2", "title": "Panel Discussion" },
+            { "id": "session-1-3", "title": "Q&A Session" }
+          ]
+        },
+        {
+          "id": "day-2",
+          "label": "Day 2",
+          "date": "March 7",
+          "timeFrame": "Full Day",
+          "sessions": [
+            { "id": "session-2-1", "title": "Plenary Sessions" },
+            { "id": "session-2-2", "title": "Parallel Workshops" },
+            { "id": "session-2-3", "title": "Networking & Final Panel" }
+          ]
+        }
+      ]
     },
     "venue": {
       "title": "Venue"

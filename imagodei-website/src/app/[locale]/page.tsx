@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { HeroSection } from './HeroSection'
 import { Objectives } from '@/components/sections/objectives'
 import { SpeakersSection } from './SpeakersSection'
+import { Program } from '@/components/sections/program'
 
 type Params = Promise<{ locale: string }>
 
@@ -12,6 +13,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const t = await getTranslations('sections.hero')
   const tObjectives = await getTranslations('sections.objectives')
   const tSpeakers = await getTranslations('sections.speakers')
+  const tProgram = await getTranslations('sections.program')
 
   // Get objectives section data from translations
   const objectivesData = {
@@ -31,6 +33,17 @@ export default async function HomePage({ params }: { params: Params }) {
       clickToCollapse: tSpeakers('clickToCollapse'),
     },
     speakers: tSpeakers.raw('items'),
+  }
+
+  // Get program section data from translations
+  const programData = {
+    translations: {
+      title: tProgram('title'),
+      subtitle: tProgram('subtitle'),
+      description: tProgram('description'),
+      comingSoon: tProgram('comingSoon'),
+    },
+    days: tProgram.raw('days'),
   }
 
   // Get hero section data from translations
@@ -79,26 +92,11 @@ export default async function HomePage({ params }: { params: Params }) {
         translations={speakersData.translations}
       />
 
-      {/* Program Section Placeholder */}
-      <section
-        id="program"
-        className="flex min-h-[50vh] items-center justify-center bg-zinc-900"
-      >
-        <div className="text-center">
-          <h2
-            className="text-3xl font-bold text-zinc-100 md:text-4xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
-            Program
-          </h2>
-          <p
-            className="mt-2 text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            #program section placeholder
-          </p>
-        </div>
-      </section>
+      {/* Program Section */}
+      <Program
+        days={programData.days}
+        translations={programData.translations}
+      />
 
       {/* Venue Section Placeholder */}
       <section
