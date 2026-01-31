@@ -1,0 +1,33 @@
+{
+  "navigation": {
+    "speakers": "Speakeri",
+    "program": "Program",
+    "venue": "Locație",
+    "partners": "Parteneri",
+    "contact": "Contact"
+  },
+  "actions": {
+    "register": "Înregistrare"
+  },
+  "sections": {
+    "speakers": {
+      "title": "Speakeri"
+    },
+    "program": {
+      "title": "Program"
+    },
+    "venue": {
+      "title": "Locație"
+    },
+    "partners": {
+      "title": "Parteneri"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "meta": {
+    "title": "Imago Dei 2.0 - Conferință",
+    "description": "Conferința Imago Dei 2.0"
+  }
+}

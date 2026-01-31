@@ -1,0 +1,33 @@
+{
+  "navigation": {
+    "speakers": "Speakers",
+    "program": "Program",
+    "venue": "Venue",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "actions": {
+    "register": "Register"
+  },
+  "sections": {
+    "speakers": {
+      "title": "Speakers"
+    },
+    "program": {
+      "title": "Program"
+    },
+    "venue": {
+      "title": "Venue"
+    },
+    "partners": {
+      "title": "Partners"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "meta": {
+    "title": "Imago Dei 2.0 - Conference",
+    "description": "Imago Dei 2.0 Conference"
+  }
+}

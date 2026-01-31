@@ -1,0 +1,57 @@
+'use client'
+
+import { useRouter, usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import { AppShell } from '@/components/shell'
+
+interface ClientLayoutProps {
+  children: React.ReactNode
+  locale: 'ro' | 'en'
+}
+
+export function ClientLayout({ children, locale }: ClientLayoutProps) {
+  const router = useRouter()
+  const pathname = usePathname()
+  const t = useTranslations()
+
+  const navigationItems = [
+    { label: t('navigation.speakers'), href: '#speakers' },
+    { label: t('navigation.program'), href: '#program' },
+    { label: t('navigation.venue'), href: '#venue' },
+    { label: t('navigation.partners'), href: '#partners' },
+    { label: t('navigation.contact'), href: '#contact' },
+  ]
+
+  const handleLanguageChange = (newLocale: 'en' | 'ro') => {
+    // Replace the locale in the current path
+    const currentPath = pathname.replace(`/${locale}`, '')
+    router.push(`/${newLocale}${currentPath || '/'}`)
+  }
+
+  const handleNavigate = (href: string) => {
+    if (href === '#') {
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else if (href.startsWith('#')) {
+      // Smooth scroll to section
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
+  return (
+    <AppShell
+      navigationItems={navigationItems}
+      registerUrl="https://example.com/register"
+      registerLabel={t('actions.register')}
+      logoText="Imago Dei"
+      currentLanguage={locale}
+      onLanguageChange={handleLanguageChange}
+      onNavigate={handleNavigate}
+    >
+      {children}
+    </AppShell>
+  )
+}
