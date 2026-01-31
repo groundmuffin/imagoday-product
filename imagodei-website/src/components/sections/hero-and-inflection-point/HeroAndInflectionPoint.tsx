@@ -130,7 +130,7 @@ export function HeroAndInflectionPoint({
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[40%_40%] md:object-[52%_35%] md:scale-[2]"
+            className="object-cover object-[45%_40%] md:object-[52%_35%] md:scale-[2]"
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
           />
