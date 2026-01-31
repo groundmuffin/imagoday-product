@@ -145,12 +145,11 @@ export function HeroAndInflectionPoint({
       >
         {/* Background Image */}
         <div
-          className={`absolute inset-0 bg-no-repeat transition-opacity duration-1000 ${
+          className={`hero-background absolute inset-0 bg-no-repeat transition-opacity duration-1000 ${
             imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
             backgroundImage: `url(${hero.backgroundImageUrl})`,
-            backgroundSize: '200%',
             backgroundPosition: '52% 35%',
           }}
         />
@@ -339,6 +338,16 @@ export function HeroAndInflectionPoint({
         .animation-delay-300 { animation-delay: 0.3s; }
         .animation-delay-400 { animation-delay: 0.4s; }
         .animation-delay-700 { animation-delay: 0.7s; }
+
+        /* Responsive hero background */
+        .hero-background {
+          background-size: cover;
+        }
+        @media (min-width: 768px) {
+          .hero-background {
+            background-size: 200%;
+          }
+        }
       `}</style>
     </div>
   )
