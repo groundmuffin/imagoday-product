@@ -85,8 +85,8 @@ export function SpeakerCard({
 
           {/* Featured badge indicator for keynote speakers */}
           {featured && (
-            <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-sky-500/50 backdrop-blur-md border border-sky-400/30">
-              <span className="text-[10px] font-medium text-white/90 uppercase tracking-wider">Keynote</span>
+            <div className="absolute top-2 right-2 px-1.5 py-1 rounded bg-sky-500/50 backdrop-blur-md border border-sky-400/30 flex items-center justify-center">
+              <span className="text-[10px] font-medium text-white/90 uppercase tracking-wider leading-none">Keynote</span>
             </div>
           )}
         </div>
