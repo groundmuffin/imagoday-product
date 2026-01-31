@@ -203,7 +203,86 @@
       }
     },
     "partners": {
-      "title": "Partners"
+      "title": "Partners",
+      "organizedBy": "Organized by",
+      "inPartnershipWith": "In partnership with",
+      "philosophy": {
+        "headline": "Why become a partner?",
+        "description": "At Imago Dei 2.0, partners are not just financial supporters, but active participants in a meaningful dialogue about the impact of artificial intelligence on humanity.",
+        "extendedDescription": "A partnership with Imago Dei 2.0 means alignment with values, access to a community of leaders and professionals concerned with ethics, meaning, and long-term impact."
+      },
+      "benefits": [
+        {
+          "id": "leadership",
+          "title": "Serious ethical leadership",
+          "description": "Align with an initiative that puts responsibility and values at the center of technology development.",
+          "icon": "compass"
+        },
+        {
+          "id": "audience",
+          "title": "High-quality audience",
+          "description": "Connect with technology leaders, theologians, researchers, and entrepreneurs.",
+          "icon": "users"
+        },
+        {
+          "id": "context",
+          "title": "Values-based context",
+          "description": "Participate in a space where dialogue is guided by ethics, meaning, and deep reflection.",
+          "icon": "heart"
+        },
+        {
+          "id": "influence",
+          "title": "Conversations that define the future",
+          "description": "Contribute to shaping the discourse about AI and humanity in the years to come.",
+          "icon": "lightbulb"
+        }
+      ],
+      "targetAudience": {
+        "headline": "Who are we addressing?",
+        "audiences": [
+          "Technology leaders",
+          "Academic specialists",
+          "Theologians",
+          "Applied ethics researchers",
+          "Entrepreneurs",
+          "NGO leaders"
+        ]
+      },
+      "partners": [
+        {
+          "id": "faithbase",
+          "name": "Faithbase",
+          "category": "organizer",
+          "url": "https://faithbase.tech/",
+          "logo": "/logos/partners/faith-base-logo.jpg",
+          "description": "An organization exploring the intersection of faith, technology, and the human future."
+        },
+        {
+          "id": "iesr",
+          "name": "IESR",
+          "fullName": "Institute for the Study of Religions",
+          "category": "organizer",
+          "url": "https://studiireligioase.ro/",
+          "logo": "/logos/partners/institutul-evanghelic-logo.jpg",
+          "description": "Academic institute dedicated to the study of religions."
+        },
+        {
+          "id": "makeitinoradea",
+          "name": "MakeITinOradea",
+          "category": "institutional",
+          "url": "https://makeitinoradea.ro/",
+          "logo": "/logos/partners/makeit.svg",
+          "description": "Tech community in Oradea."
+        },
+        {
+          "id": "episcopia",
+          "name": "Episcopia Romano-Catolică de Oradea",
+          "category": "institutional",
+          "url": "https://sanctusladislaus.ro/",
+          "logo": "/logos/partners/episcopia-logo.png",
+          "description": "Religious institution with a secular tradition."
+        }
+      ]
     },
     "contact": {
       "title": "Contact"

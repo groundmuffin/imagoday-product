@@ -203,7 +203,86 @@
       }
     },
     "partners": {
-      "title": "Parteneri"
+      "title": "Parteneri",
+      "organizedBy": "Organizat de",
+      "inPartnershipWith": "În parteneriat cu",
+      "philosophy": {
+        "headline": "De ce să deveniți parteneri?",
+        "description": "La Imago Dei 2.0, partenerii nu sunt simpli susținători financiari, ci actori implicați într-un dialog de substanță despre impactul inteligenței artificiale asupra umanității.",
+        "extendedDescription": "Un parteneriat cu Imago Dei 2.0 înseamnă aliniere cu valori, acces la o comunitate de lideri și profesioniști preocupați de etică, sens și impact pe termen lung."
+      },
+      "benefits": [
+        {
+          "id": "leadership",
+          "title": "Leadership etic serios",
+          "description": "Aliniați-vă cu o inițiativă care pune în centru responsabilitatea și valorile în dezvoltarea tehnologiei.",
+          "icon": "compass"
+        },
+        {
+          "id": "audience",
+          "title": "Audiență de înaltă calitate",
+          "description": "Conectați-vă cu lideri în tehnologie, teologi, cercetători și antreprenori.",
+          "icon": "users"
+        },
+        {
+          "id": "context",
+          "title": "Context bazat pe valori",
+          "description": "Participați într-un spațiu unde dialogul este ghidat de etică, sens și reflecție profundă.",
+          "icon": "heart"
+        },
+        {
+          "id": "influence",
+          "title": "Conversații care definesc viitorul",
+          "description": "Contribuiți la modelarea discursului despre AI și umanitate în anii care urmează.",
+          "icon": "lightbulb"
+        }
+      ],
+      "targetAudience": {
+        "headline": "Cui ne adresăm?",
+        "audiences": [
+          "Lideri în tehnologie",
+          "Specialiști din mediul academic",
+          "Teologi",
+          "Cercetători în etică aplicată",
+          "Antreprenori",
+          "Lideri ONG"
+        ]
+      },
+      "partners": [
+        {
+          "id": "faithbase",
+          "name": "Faithbase",
+          "category": "organizer",
+          "url": "https://faithbase.tech/",
+          "logo": "/logos/partners/faith-base-logo.jpg",
+          "description": "O organizație care explorează intersecția dintre credință, tehnologie și viitorul uman."
+        },
+        {
+          "id": "iesr",
+          "name": "IESR",
+          "fullName": "Institutul pentru Studiul Religiilor",
+          "category": "organizer",
+          "url": "https://studiireligioase.ro/",
+          "logo": "/logos/partners/institutul-evanghelic-logo.jpg",
+          "description": "Institut academic dedicat studiului religiilor."
+        },
+        {
+          "id": "makeitinoradea",
+          "name": "MakeITinOradea",
+          "category": "institutional",
+          "url": "https://makeitinoradea.ro/",
+          "logo": "/logos/partners/makeit.svg",
+          "description": "Comunitate tech din Oradea."
+        },
+        {
+          "id": "episcopia",
+          "name": "Episcopia Romano-Catolică de Oradea",
+          "category": "institutional",
+          "url": "https://sanctusladislaus.ro/",
+          "logo": "/logos/partners/episcopia-logo.png",
+          "description": "Instituție religioasă cu tradiție seculară."
+        }
+      ]
     },
     "contact": {
       "title": "Contact"

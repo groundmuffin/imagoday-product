@@ -4,6 +4,7 @@ import { Objectives } from '@/components/sections/objectives'
 import { SpeakersSection } from './SpeakersSection'
 import { Program } from '@/components/sections/program'
 import { VenueSection } from './VenueSection'
+import { Partners } from '@/components/sections/partners'
 
 type Params = Promise<{ locale: string }>
 
@@ -16,6 +17,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const tSpeakers = await getTranslations('sections.speakers')
   const tProgram = await getTranslations('sections.program')
   const tVenue = await getTranslations('sections.venue')
+  const tPartners = await getTranslations('sections.partners')
 
   // Get objectives section data from translations
   const objectivesData = {
@@ -54,6 +56,18 @@ export default async function HomePage({ params }: { params: Params }) {
       getDirections: tVenue('getDirections'),
     },
     venue: tVenue.raw('data'),
+  }
+
+  // Get partners section data from translations
+  const partnersData = {
+    translations: {
+      organizedBy: tPartners('organizedBy'),
+      inPartnershipWith: tPartners('inPartnershipWith'),
+    },
+    philosophy: tPartners.raw('philosophy'),
+    benefits: tPartners.raw('benefits'),
+    targetAudience: tPartners.raw('targetAudience'),
+    partners: tPartners.raw('partners'),
   }
 
   // Get hero section data from translations
@@ -114,26 +128,14 @@ export default async function HomePage({ params }: { params: Params }) {
         translations={venueData.translations}
       />
 
-      {/* Partners Section Placeholder */}
-      <section
-        id="partners"
-        className="flex min-h-[50vh] items-center justify-center bg-zinc-900"
-      >
-        <div className="text-center">
-          <h2
-            className="text-3xl font-bold text-zinc-100 md:text-4xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
-            Partners
-          </h2>
-          <p
-            className="mt-2 text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            #partners section placeholder
-          </p>
-        </div>
-      </section>
+      {/* Partners Section */}
+      <Partners
+        partnershipPhilosophy={partnersData.philosophy}
+        partnershipBenefits={partnersData.benefits}
+        targetAudience={partnersData.targetAudience}
+        partners={partnersData.partners}
+        translations={partnersData.translations}
+      />
 
       {/* Contact Section Placeholder */}
       <section
