@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { HeroSection } from './HeroSection'
+import { Objectives } from '@/components/sections/objectives'
 
 type Params = Promise<{ locale: string }>
 
@@ -8,6 +9,13 @@ export default async function HomePage({ params }: { params: Params }) {
   setRequestLocale(locale)
 
   const t = await getTranslations('sections.hero')
+  const tObjectives = await getTranslations('sections.objectives')
+
+  // Get objectives section data from translations
+  const objectivesData = {
+    sectionTitle: tObjectives('title'),
+    objectives: tObjectives.raw('items'),
+  }
 
   // Get hero section data from translations
   const heroData = {
@@ -42,6 +50,12 @@ export default async function HomePage({ params }: { params: Params }) {
     <div>
       {/* Hero & Inflection Point Section */}
       <HeroSection data={heroData} />
+
+      {/* Objectives Section */}
+      <Objectives
+        sectionTitle={objectivesData.sectionTitle}
+        objectives={objectivesData.objectives}
+      />
 
       {/* Speakers Section Placeholder */}
       <section

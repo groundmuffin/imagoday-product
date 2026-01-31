@@ -67,6 +67,41 @@
       },
       "aboutHeading": "About the conference"
     },
+    "objectives": {
+      "title": "Objectives",
+      "items": [
+        {
+          "id": "obj-01",
+          "number": "01",
+          "title": "Awareness",
+          "description": "Highlighting AI's significant impact on society, economy, culture, and theology."
+        },
+        {
+          "id": "obj-02",
+          "number": "02",
+          "title": "Interdisciplinary Dialogue",
+          "description": "Creating a space where specialists from technology, ethics, theology, and business can collaborate."
+        },
+        {
+          "id": "obj-03",
+          "number": "03",
+          "title": "Education",
+          "description": "Providing new perspectives, tools, and vocabulary about AI for religious, academic, and civic communities."
+        },
+        {
+          "id": "obj-04",
+          "number": "04",
+          "title": "Anticipation & Preparation",
+          "description": "Exploring possible scenarios (positive and negative) for humanity."
+        },
+        {
+          "id": "obj-05",
+          "number": "05",
+          "title": "Ethical Framework",
+          "description": "Identifying shared values to guide the development and use of AI."
+        }
+      ]
+    },
     "speakers": {
       "title": "Speakers"
     },
