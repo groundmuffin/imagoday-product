@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { HeroSection } from './HeroSection'
 import { Objectives } from '@/components/sections/objectives'
+import { SpeakersSection } from './SpeakersSection'
 
 type Params = Promise<{ locale: string }>
 
@@ -10,11 +11,26 @@ export default async function HomePage({ params }: { params: Params }) {
 
   const t = await getTranslations('sections.hero')
   const tObjectives = await getTranslations('sections.objectives')
+  const tSpeakers = await getTranslations('sections.speakers')
 
   // Get objectives section data from translations
   const objectivesData = {
     sectionTitle: tObjectives('title'),
     objectives: tObjectives.raw('items'),
+  }
+
+  // Get speakers section data from translations
+  const speakersData = {
+    translations: {
+      title: tSpeakers('title'),
+      subtitle: tSpeakers('subtitle'),
+      description: tSpeakers('description'),
+      keynoteSpeakers: tSpeakers('keynoteSpeakers'),
+      facilitators: tSpeakers('facilitators'),
+      clickToReadBio: tSpeakers('clickToReadBio'),
+      clickToCollapse: tSpeakers('clickToCollapse'),
+    },
+    speakers: tSpeakers.raw('items'),
   }
 
   // Get hero section data from translations
@@ -57,26 +73,11 @@ export default async function HomePage({ params }: { params: Params }) {
         objectives={objectivesData.objectives}
       />
 
-      {/* Speakers Section Placeholder */}
-      <section
-        id="speakers"
-        className="flex min-h-[50vh] items-center justify-center bg-zinc-800"
-      >
-        <div className="text-center">
-          <h2
-            className="text-3xl font-bold text-zinc-100 md:text-4xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
-            Speakers
-          </h2>
-          <p
-            className="mt-2 text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            #speakers section placeholder
-          </p>
-        </div>
-      </section>
+      {/* Speakers Section */}
+      <SpeakersSection
+        speakers={speakersData.speakers}
+        translations={speakersData.translations}
+      />
 
       {/* Program Section Placeholder */}
       <section

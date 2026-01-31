@@ -14,6 +14,8 @@ All commands run from `imagodei-website/`:
 npm run dev      # Start development server
 npm run build    # Build for production
 npm run lint     # Run ESLint
+npm run test     # Run tests in watch mode
+npm run test:run # Run tests once
 npm start        # Start production server
 ```
 

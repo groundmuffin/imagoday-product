@@ -103,7 +103,60 @@
       ]
     },
     "speakers": {
-      "title": "Speakers"
+      "title": "Speakers",
+      "subtitle": "Keynote & Facilitators",
+      "description": "World-renowned experts in artificial intelligence, ethics, and theology",
+      "keynoteSpeakers": "Keynote Speakers",
+      "facilitators": "Facilitators & Panelists",
+      "clickToReadBio": "Click to read bio",
+      "clickToCollapse": "Click to collapse",
+      "items": [
+        {
+          "id": "speaker-001",
+          "name": "Dr. Noreen Herzfeld",
+          "title": "Professor of Theology and Computer Science, College of Saint Benedict",
+          "expertise": "Artificial Intelligence & Ethics",
+          "featured": true,
+          "photo": "/speakers/noreen-herzfeld.jpg",
+          "bio": "Dr. Noreen Herzfeld is a Professor of Theology and Computer Science at College of Saint Benedict, expert in artificial intelligence, AI, and ethics."
+        },
+        {
+          "id": "speaker-002",
+          "name": "Timmy Ghiurău",
+          "title": "Innovation Director & Technology Ethics, Volvo Cars & Designful Ventures",
+          "expertise": "Innovation, Culture & Futures",
+          "featured": true,
+          "photo": "/speakers/timmy-ghiurau.jpg",
+          "bio": "Timmy Ghiurău is an innovation director and technology ethics architect, working on culture and futures at Volvo Cars and Designful Ventures."
+        },
+        {
+          "id": "speaker-003",
+          "name": "Dr. Natan Mladin",
+          "title": "Senior Researcher, Theos Think Tank",
+          "expertise": "Technology Ethics & Theology",
+          "featured": false,
+          "photo": "/speakers/natan-mladin.jpg",
+          "bio": "Natan Mladin is a Senior Researcher in technology ethics at Theos think tank in London, Associate of the UK Commission for AI, Faith & Civil Society, and co-founder of Faithbase."
+        },
+        {
+          "id": "speaker-004",
+          "name": "Dr. Susana Dragomir",
+          "title": "Founder & Director, EU SPIN Research & Consulting",
+          "expertise": "Strategic Communication & Information Security",
+          "featured": false,
+          "photo": "/speakers/susana-dragomir.jpg",
+          "bio": "Dr. Susana Dragomir is an expert in strategic communication with over a decade of experience at the European level."
+        },
+        {
+          "id": "speaker-005",
+          "name": "Daniel Alb",
+          "title": "VP of Product & Co-founder Faithbase",
+          "expertise": "Technology, AI & Cyberpsychology",
+          "featured": false,
+          "photo": "/speakers/daniel-alb.jpg",
+          "bio": "Daniel Alb is a product leader and entrepreneur in technology and artificial intelligence."
+        }
+      ]
     },
     "program": {
       "title": "Program"
