@@ -15,6 +15,7 @@ export interface Speaker {
 export interface Session {
   id: string
   title: string
+  icon?: 'mic' | 'users' | 'messageCircle' | 'presentation' | 'wrench' | 'network'
 }
 
 export interface Day {
@@ -51,6 +52,7 @@ export interface Objective {
   number: string
   title: string
   description: string
+  icon?: 'lightbulb' | 'users' | 'graduationCap' | 'compass' | 'scale'
 }
 
 // =============================================================================

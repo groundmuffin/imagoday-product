@@ -2,6 +2,7 @@
 
 import type { Speaker } from '@/types'
 import { SpeakerCard } from './SpeakerCard'
+import { useScrollAnimation, getStaggeredDelay } from '@/hooks/useScrollAnimation'
 
 interface SpeakersTranslations {
   title: string
@@ -21,6 +22,8 @@ interface SpeakersProps {
 }
 
 export function Speakers({ speakers, translations, onExpand, onCollapse }: SpeakersProps) {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.1 })
+
   // Split speakers by featured status
   const featuredSpeakers = speakers.filter((s) => s.featured)
   const otherSpeakers = speakers.filter((s) => !s.featured)
@@ -33,6 +36,7 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
   return (
     <section
       id="speakers"
+      ref={ref}
       className="bg-zinc-950 py-20 sm:py-24 lg:py-32"
       aria-labelledby="speakers-heading"
     >
@@ -40,20 +44,26 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         {/* Section Header */}
         <header className="text-center mb-12 sm:mb-16 lg:mb-20">
           <span
-            className="inline-block text-sm font-medium uppercase tracking-widest text-sky-400 mb-4 animate-fade-in-up"
+            className={`inline-block text-sm font-medium uppercase tracking-widest text-sky-400 mb-4 ${
+              isVisible ? 'animate-fade-in-up' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.subtitle}
           </span>
           <h2
             id="speakers-heading"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fade-in-up animation-delay-100"
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 ${
+              isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {translations.title}
           </h2>
           <p
-            className="text-lg text-zinc-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-200"
+            className={`text-lg text-zinc-400 max-w-2xl mx-auto ${
+              isVisible ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.description}
@@ -64,7 +74,9 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         {featuredSpeakers.length > 0 && (
           <div className="mb-12 sm:mb-16">
             <h3
-              className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 animate-fade-in-up animation-delay-300"
+              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 ${
+                isVisible ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'
+              }`}
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {translations.keynoteSpeakers}
@@ -73,8 +85,8 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
               {featuredSpeakers.map((speaker, index) => (
                 <div
                   key={speaker.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${(index + 4) * 100}ms` }}
+                  className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                  style={isVisible ? getStaggeredDelay(index + 4) : undefined}
                 >
                   <SpeakerCard
                     speaker={speaker}
@@ -93,7 +105,9 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
         {otherSpeakers.length > 0 && (
           <div>
             <h3
-              className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 animate-fade-in-up animation-delay-500"
+              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 ${
+                isVisible ? 'animate-fade-in-up animation-delay-500' : 'opacity-0'
+              }`}
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {translations.facilitators}
@@ -102,8 +116,8 @@ export function Speakers({ speakers, translations, onExpand, onCollapse }: Speak
               {otherSpeakers.map((speaker, index) => (
                 <div
                   key={speaker.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${(index + 6) * 100}ms` }}
+                  className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                  style={isVisible ? getStaggeredDelay(index + 6) : undefined}
                 >
                   <SpeakerCard
                     speaker={speaker}

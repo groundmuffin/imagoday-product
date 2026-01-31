@@ -2,6 +2,7 @@
 
 import type { Day } from '@/types'
 import { DaySchedule } from './DaySchedule'
+import { useScrollAnimation, getStaggeredDelay } from '@/hooks/useScrollAnimation'
 
 export interface ProgramTranslations {
   title: string
@@ -16,9 +17,12 @@ interface ProgramProps {
 }
 
 export function Program({ days, translations }: ProgramProps) {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.1 })
+
   return (
     <section
       id="program"
+      ref={ref}
       className="relative bg-zinc-900 py-20 sm:py-24 lg:py-32"
       aria-labelledby="program-heading"
       role="region"
@@ -27,20 +31,26 @@ export function Program({ days, translations }: ProgramProps) {
         {/* Section Header */}
         <header className="mb-12 text-center sm:mb-16 lg:mb-20">
           <span
-            className="mb-4 inline-block animate-fade-in-up text-sm font-medium uppercase tracking-widest text-sky-400"
+            className={`mb-4 inline-block text-sm font-medium uppercase tracking-widest text-sky-400 ${
+              isVisible ? 'animate-fade-in-up' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.subtitle}
           </span>
           <h2
             id="program-heading"
-            className="mb-4 animate-fade-in-up text-3xl font-bold text-white animation-delay-100 sm:text-4xl md:text-5xl lg:text-6xl"
+            className={`mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl ${
+              isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {translations.title}
           </h2>
           <p
-            className="mx-auto max-w-2xl animate-fade-in-up text-lg text-zinc-400 animation-delay-200"
+            className={`mx-auto max-w-2xl text-lg text-zinc-400 ${
+              isVisible ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {translations.description}
@@ -53,15 +63,15 @@ export function Program({ days, translations }: ProgramProps) {
             {days.map((day, index) => (
               <div
                 key={day.id}
-                className="animate-fade-in-up"
-                style={{ animationDelay: `${(index + 3) * 100}ms` }}
+                className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                style={isVisible ? getStaggeredDelay(index + 3) : undefined}
               >
                 <DaySchedule day={day} />
               </div>
             ))}
           </div>
         ) : (
-          <div className="animate-fade-in-up text-center animation-delay-300">
+          <div className={`text-center ${isVisible ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'}`}>
             <p
               className="text-lg text-zinc-500"
               style={{ fontFamily: "'Inter', sans-serif" }}

@@ -3,6 +3,7 @@
 import type { Partner, PartnershipPhilosophy, PartnershipBenefit, TargetAudience } from '@/types'
 import { BenefitCard } from './BenefitCard'
 import { PartnerLogo } from './PartnerLogo'
+import { useScrollAnimation, getStaggeredDelay } from '@/hooks/useScrollAnimation'
 
 export interface PartnersProps {
   partnershipPhilosophy: PartnershipPhilosophy
@@ -24,6 +25,8 @@ export function Partners({
   partners,
   translations,
 }: PartnersProps) {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.1 })
+
   const organizers = partners.filter((p) => p.category === 'organizer')
   const institutional = partners.filter((p) => p.category === 'institutional')
   const hasPartners = organizers.length > 0 || institutional.length > 0
@@ -31,6 +34,7 @@ export function Partners({
   return (
     <section
       id="partners"
+      ref={ref}
       className="relative overflow-hidden bg-zinc-100 py-20 sm:py-24 lg:py-32"
       aria-labelledby="partners-heading"
       role="region"
@@ -44,16 +48,26 @@ export function Partners({
         <header className="mb-16 sm:mb-20 lg:mb-24">
           <h2
             id="partners-heading"
-            className="animate-fade-in-up mb-8 text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl md:text-5xl"
+            className={`mb-8 text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl md:text-5xl ${
+              isVisible ? 'animate-fade-in-up' : 'opacity-0'
+            }`}
             style={fontHeading}
           >
             {partnershipPhilosophy.headline}
           </h2>
           <div className="space-y-4">
-            <p className="animation-delay-100 animate-fade-in-up text-lg leading-relaxed text-zinc-700 sm:text-xl">
+            <p
+              className={`text-lg leading-relaxed text-zinc-700 sm:text-xl ${
+                isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
+              }`}
+            >
               {partnershipPhilosophy.description}
             </p>
-            <p className="animation-delay-200 animate-fade-in-up text-base leading-relaxed text-zinc-500">
+            <p
+              className={`text-base leading-relaxed text-zinc-500 ${
+                isVisible ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'
+              }`}
+            >
               {partnershipPhilosophy.extendedDescription}
             </p>
           </div>
@@ -66,8 +80,8 @@ export function Partners({
               {partnershipBenefits.map((benefit, index) => (
                 <div
                   key={benefit.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${(index + 3) * 100}ms` }}
+                  className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                  style={isVisible ? getStaggeredDelay(index + 3) : undefined}
                 >
                   <BenefitCard benefit={benefit} />
                 </div>
@@ -79,8 +93,9 @@ export function Partners({
         {/* Target Audience Section - Editorial Style */}
         <div className="mb-16 sm:mb-20 lg:mb-24">
           <div
-            className="animate-fade-in-up rounded-2xl border border-zinc-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm sm:p-10 lg:p-12"
-            style={{ animationDelay: '700ms' }}
+            className={`rounded-2xl border border-zinc-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm sm:p-10 lg:p-12 ${
+              isVisible ? 'animate-fade-in-up animation-delay-700' : 'opacity-0'
+            }`}
           >
             <h3
               className="mb-6 text-xl font-bold text-zinc-900 sm:text-2xl"
@@ -104,8 +119,9 @@ export function Partners({
         {/* Partners Row with Labels */}
         {hasPartners && (
           <div
-            className="animate-fade-in-up grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4"
-            style={{ animationDelay: '900ms' }}
+            className={`grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4 ${
+              isVisible ? 'animate-fade-in-up animation-delay-900' : 'opacity-0'
+            }`}
           >
             {/* Organizers */}
             {organizers.length > 0 && (
@@ -132,6 +148,28 @@ export function Partners({
           </div>
         )}
       </div>
+
+      {/* CSS Animations */}
+      <style>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        .animation-delay-100 { animation-delay: 0.1s; }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-700 { animation-delay: 0.7s; }
+        .animation-delay-900 { animation-delay: 0.9s; }
+      `}</style>
     </section>
   )
 }

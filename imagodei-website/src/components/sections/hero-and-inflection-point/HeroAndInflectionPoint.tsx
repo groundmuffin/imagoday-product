@@ -179,8 +179,11 @@ export function HeroAndInflectionPoint({
         <div className={`relative z-10 text-center ${contentWidth}`}>
           {/* Conference Label */}
           <p
-            className="text-xs tracking-[0.3em] uppercase text-zinc-500 mb-8 animate-fade-in-up"
-            style={fontHeading}
+            className="text-xs tracking-[0.3em] uppercase text-zinc-300 mb-8 animate-fade-in-up"
+            style={{
+              ...fontHeading,
+              textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.6)',
+            }}
           >
             {conference.label}
           </p>

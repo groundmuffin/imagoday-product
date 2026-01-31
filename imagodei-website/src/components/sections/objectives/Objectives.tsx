@@ -2,6 +2,7 @@
 
 import type { Objective } from '@/types'
 import { ObjectiveCard } from './ObjectiveCard'
+import { useScrollAnimation, getStaggeredDelay } from '@/hooks/useScrollAnimation'
 
 export interface ObjectivesProps {
   sectionTitle: string
@@ -10,24 +11,37 @@ export interface ObjectivesProps {
 }
 
 export function Objectives({ sectionTitle, sectionDescription, objectives }: ObjectivesProps) {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.1 })
+
   // Split objectives: first 3 on top row, last 2 centered on bottom row
   const topRow = objectives.slice(0, 3)
   const bottomRow = objectives.slice(3, 5)
 
   return (
-    <section id="objectives" className="bg-zinc-900 py-20 sm:py-24 lg:py-32" aria-labelledby="objectives-heading">
+    <section
+      id="objectives"
+      ref={ref}
+      className="bg-zinc-900 py-20 sm:py-24 lg:py-32"
+      aria-labelledby="objectives-heading"
+    >
       <div className="max-w-5xl mx-auto px-6">
         {/* Section Header */}
         <header className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h2
             id="objectives-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up"
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 ${
+              isVisible ? 'animate-fade-in-up' : 'opacity-0'
+            }`}
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {sectionTitle}
           </h2>
           {sectionDescription && (
-            <p className="text-lg text-zinc-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
+            <p
+              className={`text-lg text-zinc-400 max-w-2xl mx-auto ${
+                isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
+              }`}
+            >
               {sectionDescription}
             </p>
           )}
@@ -41,8 +55,8 @@ export function Objectives({ sectionTitle, sectionDescription, objectives }: Obj
               {topRow.map((objective, index) => (
                 <div
                   key={objective.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${(index + 2) * 100}ms` }}
+                  className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                  style={isVisible ? getStaggeredDelay(index + 2) : undefined}
                 >
                   <ObjectiveCard objective={objective} />
                 </div>
@@ -55,8 +69,8 @@ export function Objectives({ sectionTitle, sectionDescription, objectives }: Obj
                 {bottomRow.map((objective, index) => (
                   <div
                     key={objective.id}
-                    className="animate-fade-in-up"
-                    style={{ animationDelay: `${(index + 5) * 100}ms` }}
+                    className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                    style={isVisible ? getStaggeredDelay(index + 5) : undefined}
                   >
                     <ObjectiveCard objective={objective} />
                   </div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { Speaker } from '@/types'
+import { ChevronDown, User } from 'lucide-react'
 
 interface SpeakerCardTranslations {
   clickToReadBio: string
@@ -50,7 +51,7 @@ export function SpeakerCard({
         group relative cursor-pointer
         bg-zinc-900/60 border border-zinc-800 rounded-2xl
         transition-all duration-500 ease-out
-        hover:bg-zinc-900/80 hover:border-zinc-700 hover:shadow-xl hover:shadow-sky-500/10
+        hover:bg-zinc-900/80 hover:border-zinc-700 hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1
         ${featured ? 'p-6 sm:p-8' : 'p-5 sm:p-6'}
         ${isExpanded ? 'ring-1 ring-sky-500/30 shadow-2xl shadow-sky-500/10' : ''}
       `}
@@ -62,15 +63,15 @@ export function SpeakerCard({
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-sky-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
       <div className={`relative flex ${featured ? 'flex-col sm:flex-row gap-6' : 'flex-col gap-4'}`}>
-        {/* Photo with duotone effect */}
+        {/* Photo with consistent duotone effect for all speakers */}
         <div
           className={`
             relative overflow-hidden rounded-xl flex-shrink-0
             ${featured ? 'w-full sm:w-40 md:w-48 aspect-square sm:aspect-auto sm:h-48 md:h-56' : 'w-full aspect-square'}
           `}
         >
-          {/* Duotone base layer */}
-          <div className="absolute inset-0 bg-gradient-to-br from-sky-900 to-cyan-800" />
+          {/* Duotone base layer - using slightly different color for non-featured */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${featured ? 'from-sky-900 to-cyan-800' : 'from-zinc-800 to-sky-900'}`} />
           <img
             src={speaker.photo}
             alt={speaker.name}
@@ -78,6 +79,13 @@ export function SpeakerCard({
           />
           {/* Subtle overlay gradient for depth */}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent" />
+
+          {/* Featured badge indicator for keynote speakers */}
+          {featured && (
+            <div className="absolute top-3 left-3 px-2 py-1 rounded-md bg-sky-500/90 backdrop-blur-sm">
+              <span className="text-xs font-semibold text-white uppercase tracking-wide">Keynote</span>
+            </div>
+          )}
         </div>
 
         {/* Content */}
@@ -101,19 +109,16 @@ export function SpeakerCard({
             {speaker.title}
           </p>
 
-          {/* Expand indicator */}
+          {/* Expand indicator with icon */}
           <div className="flex items-center gap-2 mt-4 text-xs text-zinc-500 transition-colors duration-300 group-hover:text-sky-400">
+            <User className="w-3.5 h-3.5" strokeWidth={1.5} />
             <span style={{ fontFamily: "'Inter', sans-serif" }}>
               {isExpanded ? translations.clickToCollapse : translations.clickToReadBio}
             </span>
-            <svg
+            <ChevronDown
               className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+              strokeWidth={1.5}
+            />
           </div>
 
           {/* Bio (expandable) */}

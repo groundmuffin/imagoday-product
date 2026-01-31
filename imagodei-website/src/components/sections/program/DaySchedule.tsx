@@ -1,3 +1,5 @@
+'use client'
+
 import type { Day } from '@/types'
 import { SessionCard } from './SessionCard'
 
@@ -7,21 +9,24 @@ interface DayScheduleProps {
 
 export function DaySchedule({ day }: DayScheduleProps) {
   return (
-    <article className="relative">
-      {/* Day Card */}
-      <div className="border border-zinc-800 bg-zinc-900/50 p-6 sm:p-8">
+    <article className="relative group">
+      {/* Day Card with hover effects */}
+      <div className="border border-zinc-800 bg-zinc-900/50 p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-sky-500/5 hover:-translate-y-1">
+        {/* Subtle gradient glow on hover */}
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-sky-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
         {/* Day Header */}
-        <header className="mb-6 sm:mb-8">
+        <header className="mb-6 sm:mb-8 relative">
           {/* Day label and date */}
           <div className="mb-2 flex items-baseline justify-between gap-4">
             <h3
-              className="text-2xl font-bold text-white sm:text-3xl"
+              className="text-2xl font-bold text-white sm:text-3xl transition-colors duration-300 group-hover:text-sky-50"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               {day.label}
             </h3>
             <span
-              className="whitespace-nowrap text-sm font-medium text-sky-400"
+              className="whitespace-nowrap text-sm font-medium text-sky-400 transition-colors duration-300 group-hover:text-sky-300"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {day.date}
@@ -43,7 +48,7 @@ export function DaySchedule({ day }: DayScheduleProps) {
         </header>
 
         {/* Sessions List */}
-        <ul className="space-y-3" role="list">
+        <ul className="space-y-3 relative" role="list">
           {day.sessions.map((session, index) => (
             <li
               key={session.id}
@@ -55,6 +60,27 @@ export function DaySchedule({ day }: DayScheduleProps) {
           ))}
         </ul>
       </div>
+
+      {/* Accent line at bottom on hover */}
+      <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      {/* CSS Animations */}
+      <style>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.5s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </article>
   )
 }
