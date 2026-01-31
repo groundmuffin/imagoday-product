@@ -1,0 +1,128 @@
+{
+  "speakers": [
+    {
+      "id": "speaker-001",
+      "name": "Dr. Noreen Herzfeld",
+      "title": "Profesor de Teologie și Informatică, College of Saint Benedict",
+      "expertise": "Inteligență Artificială & Etică",
+      "featured": true,
+      "photo": "/speakers/noreen-herzfeld.jpg",
+      "bio": "Dr. Noreen Herzfeld este profesor de Teologie și Informatică la College of Saint Benedict, expert în inteligența artificială, AI și etică."
+    },
+    {
+      "id": "speaker-002",
+      "name": "Timmy Ghiurău",
+      "title": "Director Inovație & Etica Tehnologiei, Volvo Cars & Designful Ventures",
+      "expertise": "Inovație, Cultură & Viitoruri",
+      "featured": true,
+      "photo": "/speakers/timmy-ghiurau.jpg",
+      "bio": "Timmy Ghiurău este director și arhitect de inovație și etica tehnologiei, cultură și viitoruri la Volvo Cars și Designful Ventures."
+    },
+    {
+      "id": "speaker-003",
+      "name": "Dr. Natan Mladin",
+      "title": "Senior Researcher, Theos Think Tank",
+      "expertise": "Etica Tehnologiei & Teologie",
+      "featured": false,
+      "photo": "/speakers/natan-mladin.jpg",
+      "bio": "Natan Mladin este Senior Researcher în etica tehnologiei la Theos think tank în Londra."
+    }
+  ],
+  "days": [
+    {
+      "id": "day-1",
+      "label": "Ziua 1",
+      "date": "6 Martie",
+      "timeFrame": "Seara",
+      "sessions": [
+        { "id": "session-1-1", "title": "Keynote-uri" },
+        { "id": "session-1-2", "title": "Panel de discuții" },
+        { "id": "session-1-3", "title": "Sesiune Q&A" }
+      ]
+    },
+    {
+      "id": "day-2",
+      "label": "Ziua 2",
+      "date": "7 Martie",
+      "timeFrame": "Întreaga Zi",
+      "sessions": [
+        { "id": "session-2-1", "title": "Sesiuni plenare" },
+        { "id": "session-2-2", "title": "Workshop-uri paralele" },
+        { "id": "session-2-3", "title": "Networking & Panel final" }
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "id": "obj-01",
+      "number": "01",
+      "title": "Conștientizare",
+      "description": "Evidențierea impactului semnificativ al AI asupra societății, economiei, culturii și teologiei."
+    },
+    {
+      "id": "obj-02",
+      "number": "02",
+      "title": "Dialog Interdisciplinar",
+      "description": "Crearea unui spațiu unde specialiști din tehnologie, etică, teologie și business pot colabora."
+    },
+    {
+      "id": "obj-03",
+      "number": "03",
+      "title": "Educație",
+      "description": "Oferirea de perspective noi, unelte și vocabular despre AI pentru comunități religioase, academice și civice."
+    },
+    {
+      "id": "obj-04",
+      "number": "04",
+      "title": "Anticipare & Pregătire",
+      "description": "Explorarea scenariilor posibile (pozitive și negative) pentru umanitate."
+    },
+    {
+      "id": "obj-05",
+      "number": "05",
+      "title": "Cadru Etic",
+      "description": "Identificarea valorilor comune care să ghideze dezvoltarea și utilizarea AI."
+    }
+  ],
+  "venue": {
+    "id": "venue-001",
+    "name": "Palatul Episcopal Romano Catolic",
+    "city": "Oradea",
+    "country": "România",
+    "description": "Un cadru arhitectural și cultural de excepție, găzduind colecția de artă eclesiastică — spațiu care încurajează contemplația și dialogul profund.",
+    "photoUrl": "/images/venue/episcopal-palace-interior.jpg",
+    "photoAlt": "Interior of the Roman Catholic Episcopal Palace showing baroque architecture and ornate details",
+    "googleMapsUrl": "https://maps.google.com/?q=Palatul+Episcopal+Romano+Catolic+Oradea"
+  },
+  "partners": [
+    {
+      "id": "faithbase",
+      "name": "Faithbase",
+      "category": "organizer",
+      "url": "https://faithbase.tech/",
+      "logo": "/logos/partners/faith-base-logo.jpg",
+      "description": "O organizație care explorează intersecția dintre credință, tehnologie și viitorul uman."
+    },
+    {
+      "id": "iesr",
+      "name": "IESR",
+      "fullName": "Institutul pentru Studiul Religiilor",
+      "category": "organizer",
+      "url": "https://studiireligioase.ro/",
+      "logo": "/logos/partners/institutul-evanghelic-logo.jpg",
+      "description": "Institut academic dedicat studiului religiilor și impactului lor în societatea contemporană."
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact-1",
+      "email": "office@imagodei20.org",
+      "label": "General Inquiries"
+    },
+    {
+      "id": "contact-2",
+      "email": "daniel@faithbase.tech",
+      "label": "Daniel Alb"
+    }
+  ]
+}

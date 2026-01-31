@@ -1,0 +1,35 @@
+{
+  "sectionTitle": "Obiective",
+  "objectives": [
+    {
+      "id": "obj-01",
+      "number": "01",
+      "title": "Conștientizare",
+      "description": "Evidențierea impactului semnificativ al AI asupra societății, economiei, culturii și teologiei."
+    },
+    {
+      "id": "obj-02",
+      "number": "02",
+      "title": "Dialog Interdisciplinar",
+      "description": "Crearea unui spațiu unde specialiști din tehnologie, etică, teologie și business pot colabora."
+    },
+    {
+      "id": "obj-03",
+      "number": "03",
+      "title": "Educație",
+      "description": "Oferirea de perspective noi, unelte și vocabular despre AI pentru comunități religioase, academice și civice."
+    },
+    {
+      "id": "obj-04",
+      "number": "04",
+      "title": "Anticipare & Pregătire",
+      "description": "Explorarea scenariilor posibile (pozitive și negative) pentru umanitate."
+    },
+    {
+      "id": "obj-05",
+      "number": "05",
+      "title": "Cadru Etic",
+      "description": "Identificarea valorilor comune care să ghideze dezvoltarea și utilizarea AI."
+    }
+  ]
+}

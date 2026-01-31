@@ -1,0 +1,31 @@
+/* Design Tokens for Imago Dei 2.0 */
+
+:root {
+  /* Colors - Using Tailwind's built-in palette */
+  /* Primary: sky - buttons, links, key accents */
+  --color-primary-400: #38bdf8; /* sky-400 */
+  --color-primary-500: #0ea5e9; /* sky-500 */
+  --color-primary-600: #0284c7; /* sky-600 */
+
+  /* Secondary: cyan - highlights, secondary elements */
+  --color-secondary-400: #22d3ee; /* cyan-400 */
+  --color-secondary-500: #06b6d4; /* cyan-500 */
+
+  /* Neutral: zinc - backgrounds, text, borders */
+  --color-neutral-50: #fafafa;   /* zinc-50 */
+  --color-neutral-100: #f4f4f5; /* zinc-100 */
+  --color-neutral-200: #e4e4e7; /* zinc-200 */
+  --color-neutral-300: #d4d4d8; /* zinc-300 */
+  --color-neutral-400: #a1a1aa; /* zinc-400 */
+  --color-neutral-500: #71717a; /* zinc-500 */
+  --color-neutral-600: #52525b; /* zinc-600 */
+  --color-neutral-700: #3f3f46; /* zinc-700 */
+  --color-neutral-800: #27272a; /* zinc-800 */
+  --color-neutral-900: #18181b; /* zinc-900 */
+  --color-neutral-950: #09090b; /* zinc-950 */
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}

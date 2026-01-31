@@ -1,0 +1,1 @@
+export { HeroAndInflectionPoint } from './HeroAndInflectionPoint'

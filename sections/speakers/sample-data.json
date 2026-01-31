@@ -1,0 +1,49 @@
+{
+  "speakers": [
+    {
+      "id": "speaker-001",
+      "name": "Dr. Noreen Herzfeld",
+      "title": "Profesor de Teologie și Informatică, College of Saint Benedict",
+      "expertise": "Inteligență Artificială & Etică",
+      "featured": true,
+      "photo": "/speakers/noreen-herzfeld.jpg",
+      "bio": "Dr. Noreen Herzfeld este profesor de Teologie și Informatică la College of Saint Benedict, expert în inteligența artificială, AI și etică."
+    },
+    {
+      "id": "speaker-002",
+      "name": "Timmy Ghiurău",
+      "title": "Director Inovație & Etica Tehnologiei, Volvo Cars & Designful Ventures",
+      "expertise": "Inovație, Cultură & Viitoruri",
+      "featured": true,
+      "photo": "/speakers/timmy-ghiurau.jpg",
+      "bio": "Timmy Ghiurău este director și arhitect de inovație și etica tehnologiei, cultură și viitoruri la Volvo Cars și Designful Ventures."
+    },
+    {
+      "id": "speaker-003",
+      "name": "Dr. Natan Mladin",
+      "title": "Senior Researcher, Theos Think Tank",
+      "expertise": "Etica Tehnologiei & Teologie",
+      "featured": false,
+      "photo": "/speakers/natan-mladin.jpg",
+      "bio": "Natan Mladin este Senior Researcher în etica tehnologiei la Theos think tank în Londra, Asociat al UK Commission for AI, Faith & Civil Society din Marea Britanie și co-fondator al Faithbase."
+    },
+    {
+      "id": "speaker-004",
+      "name": "Dr. Susana Dragomir",
+      "title": "Fondator & Director, EU SPIN Research & Consulting",
+      "expertise": "Comunicare Strategică & Securitate Informațională",
+      "featured": false,
+      "photo": "/speakers/susana-dragomir.jpg",
+      "bio": "Dr. Susana Dragomir este expert în comunicare strategică, cu peste un deceniu de experiență la nivel european."
+    },
+    {
+      "id": "speaker-005",
+      "name": "Daniel Alb",
+      "title": "VP of Product & Co-fondator Faithbase",
+      "expertise": "Tehnologie, AI & Cyberpsychology",
+      "featured": false,
+      "photo": "/speakers/daniel-alb.jpg",
+      "bio": "Daniel Alb este lider de produs și antreprenor în zona de tehnologie și inteligență artificială."
+    }
+  ]
+}

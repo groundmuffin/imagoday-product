@@ -1,0 +1,56 @@
+{
+  "conference": {
+    "label": "Conferință Internațională",
+    "nameParts": [
+      { "text": "Imago ", "accent": false },
+      { "text": "Dei", "accent": true },
+      { "text": " 2.0", "accent": false }
+    ],
+    "tagline": "Inflection Point",
+    "dateDisplay": "6-7 Martie 2026",
+    "startDate": "2026-03-06",
+    "endDate": "2026-03-07",
+    "location": "Oradea, România"
+  },
+  "hero": {
+    "backgroundImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Creaci%C3%B3n_de_Ad%C3%A1n_%28Miguel_%C3%81ngel%29.jpg",
+    "backgroundAlt": "Michelangelo's Creation of Adam - the iconic fresco showing the hands of God and Adam reaching toward each other",
+    "scrollHint": "Descoperă",
+    "primaryCta": {
+      "label": "Înregistrare",
+      "url": "https://register.imagodei20.org",
+      "external": true
+    },
+    "secondaryCta": {
+      "label": "Vezi Programul",
+      "url": "#program",
+      "external": false
+    }
+  },
+  "about": {
+    "text": "O conferință care aduce împreună perspective din tehnologie, etică și teologie pentru a discuta despre",
+    "highlights": [
+      { "text": "inteligența artificială", "highlighted": true },
+      { "text": ", ", "highlighted": false },
+      { "text": "umanitate", "highlighted": true },
+      { "text": " și ", "highlighted": false },
+      { "text": "responsabilitate morală", "highlighted": true },
+      { "text": ".", "highlighted": false }
+    ]
+  },
+  "manifesto": {
+    "sectionTitle": "Punctul de Inflexiune",
+    "leftColumn": {
+      "paragraphs": [
+        "Există momente rare în istorie în care progresul tehnologic schimbă felul în care ne înțelegem pe noi înșine.",
+        "În era inteligenței artificiale, întrebările fundamentale despre {{Imago Dei}} intră într-o nouă etapă — una în care omul încearcă să creeze inteligență după propriul chip."
+      ]
+    },
+    "rightColumn": {
+      "paragraphs": [
+        "Explorăm modul în care avansul rapid al AI ne provoacă să regândim ce înseamnă să fim umani, precum și responsabilitatea morală pe care o avem într-un moment de inflexiune istorică."
+      ],
+      "isItalic": true
+    }
+  }
+}

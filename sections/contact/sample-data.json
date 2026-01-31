@@ -1,0 +1,15 @@
+{
+  "closingQuote": "În momente de inflexiune, responsabilitatea aparține celor dispuși să gândească profund și să acționeze înțelept.",
+  "contacts": [
+    {
+      "id": "contact-1",
+      "email": "office@imagodei20.org",
+      "label": "General Inquiries"
+    },
+    {
+      "id": "contact-2",
+      "email": "daniel@faithbase.tech",
+      "label": "Daniel Alb"
+    }
+  ]
+}
