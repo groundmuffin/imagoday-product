@@ -285,7 +285,20 @@
       ]
     },
     "contact": {
-      "title": "Contact"
+      "title": "Contact",
+      "closingQuote": "In momente de inflexiune, responsabilitatea apartine celor dispusi sa gandeasca profund si sa actioneze intelept.",
+      "contacts": [
+        {
+          "id": "contact-1",
+          "email": "office@imagodei20.org",
+          "label": "Informatii generale"
+        },
+        {
+          "id": "contact-2",
+          "email": "daniel@faithbase.tech",
+          "label": "Daniel Alb"
+        }
+      ]
     }
   },
   "meta": {

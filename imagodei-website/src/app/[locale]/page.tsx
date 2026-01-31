@@ -5,6 +5,7 @@ import { SpeakersSection } from './SpeakersSection'
 import { Program } from '@/components/sections/program'
 import { VenueSection } from './VenueSection'
 import { Partners } from '@/components/sections/partners'
+import { Contact } from '@/components/sections/contact'
 
 type Params = Promise<{ locale: string }>
 
@@ -18,6 +19,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const tProgram = await getTranslations('sections.program')
   const tVenue = await getTranslations('sections.venue')
   const tPartners = await getTranslations('sections.partners')
+  const tContact = await getTranslations('sections.contact')
 
   // Get objectives section data from translations
   const objectivesData = {
@@ -68,6 +70,12 @@ export default async function HomePage({ params }: { params: Params }) {
     benefits: tPartners.raw('benefits'),
     targetAudience: tPartners.raw('targetAudience'),
     partners: tPartners.raw('partners'),
+  }
+
+  // Get contact section data from translations
+  const contactData = {
+    closingQuote: tContact('closingQuote'),
+    contacts: tContact.raw('contacts'),
   }
 
   // Get hero section data from translations
@@ -137,26 +145,11 @@ export default async function HomePage({ params }: { params: Params }) {
         translations={partnersData.translations}
       />
 
-      {/* Contact Section Placeholder */}
-      <section
-        id="contact"
-        className="flex min-h-[50vh] items-center justify-center bg-zinc-800"
-      >
-        <div className="text-center">
-          <h2
-            className="text-3xl font-bold text-zinc-100 md:text-4xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-          >
-            Contact
-          </h2>
-          <p
-            className="mt-2 text-zinc-400"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            #contact section placeholder
-          </p>
-        </div>
-      </section>
+      {/* Contact Section */}
+      <Contact
+        closingQuote={contactData.closingQuote}
+        contacts={contactData.contacts}
+      />
     </div>
   )
 }

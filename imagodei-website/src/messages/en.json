@@ -285,7 +285,20 @@
       ]
     },
     "contact": {
-      "title": "Contact"
+      "title": "Contact",
+      "closingQuote": "At moments of inflection, responsibility belongs to those willing to think deeply and act wisely.",
+      "contacts": [
+        {
+          "id": "contact-1",
+          "email": "office@imagodei20.org",
+          "label": "General Inquiries"
+        },
+        {
+          "id": "contact-2",
+          "email": "daniel@faithbase.tech",
+          "label": "Daniel Alb"
+        }
+      ]
     }
   },
   "meta": {
