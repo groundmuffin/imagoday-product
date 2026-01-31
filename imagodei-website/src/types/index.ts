@@ -10,6 +10,8 @@ export interface Speaker {
   featured: boolean
   photo: string
   bio: string
+  linkedIn?: string
+  website?: string
 }
 
 export interface Session {

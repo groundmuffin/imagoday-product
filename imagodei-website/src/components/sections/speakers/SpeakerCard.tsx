@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import type { Speaker } from '@/types'
-import { ChevronDown, User } from 'lucide-react'
+import { ChevronDown, User, Linkedin, Globe } from 'lucide-react'
 
 interface SpeakerCardTranslations {
   clickToReadBio: string
@@ -103,12 +103,31 @@ export function SpeakerCard({
             {speaker.name}
           </h3>
 
-          {/* Title */}
-          <p
-            className={`text-zinc-400 leading-relaxed font-body ${featured ? 'text-sm sm:text-base' : 'text-sm'}`}
-          >
-            {speaker.title}
-          </p>
+          {/* Title with social link */}
+          <div className="flex items-start gap-2">
+            <p
+              className={`text-zinc-400 leading-relaxed font-body flex-1 ${featured ? 'text-sm sm:text-base' : 'text-sm'}`}
+            >
+              {speaker.title}
+            </p>
+            {(speaker.linkedIn || speaker.website) && (
+              <a
+                href={speaker.linkedIn || speaker.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                onKeyDown={(e) => e.stopPropagation()}
+                className="flex-shrink-0 p-1.5 -m-1.5 text-zinc-500 hover:text-sky-400 transition-colors duration-200"
+                aria-label={speaker.linkedIn ? `${speaker.name} on LinkedIn` : `${speaker.name}'s website`}
+              >
+                {speaker.linkedIn ? (
+                  <Linkedin className="w-4 h-4" strokeWidth={1.5} />
+                ) : (
+                  <Globe className="w-4 h-4" strokeWidth={1.5} />
+                )}
+              </a>
+            )}
+          </div>
 
           {/* Expand indicator with icon */}
           <div className="flex items-center gap-2 mt-4 text-xs text-zinc-500 transition-colors duration-300 group-hover:text-sky-400">

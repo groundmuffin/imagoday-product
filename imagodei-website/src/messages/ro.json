@@ -119,7 +119,8 @@
           "expertise": "Inteligență Artificială & Etică",
           "featured": true,
           "photo": "/speakers/noreen-herzfeld.jpg",
-          "bio": "Dr. Noreen Herzfeld este profesor de Teologie și Informatică la College of Saint Benedict, expert în inteligența artificială, AI și etică."
+          "bio": "Dr. Noreen Herzfeld este profesor de Teologie și Informatică la College of Saint Benedict, expert în inteligența artificială, AI și etică.",
+          "website": "https://www.csbsju.edu/sot/person/noreen-herzfeld/"
         },
         {
           "id": "speaker-002",
@@ -128,7 +129,8 @@
           "expertise": "Inovație, Cultură & Viitoruri",
           "featured": true,
           "photo": "/speakers/timmy-ghiurau.jpg",
-          "bio": "Timmy Ghiurău este director și arhitect de inovație și etica tehnologiei, cultură și viitoruri la Volvo Cars și Designful Ventures."
+          "bio": "Timmy Ghiurău este director și arhitect de inovație și etica tehnologiei, cultură și viitoruri la Volvo Cars și Designful Ventures.",
+          "linkedIn": "https://www.linkedin.com/in/timmy-ghiurau-71858961/"
         },
         {
           "id": "speaker-003",
@@ -137,7 +139,8 @@
           "expertise": "Etica Tehnologiei & Teologie",
           "featured": false,
           "photo": "/speakers/natan-mladin.jpg",
-          "bio": "Natan Mladin este Senior Researcher în etica tehnologiei la Theos think tank în Londra, Asociat al UK Commission for AI, Faith & Civil Society din Marea Britanie și co-fondator al Faithbase."
+          "bio": "Natan Mladin este Senior Researcher în etica tehnologiei la Theos think tank în Londra, Asociat al UK Commission for AI, Faith & Civil Society din Marea Britanie și co-fondator al Faithbase.",
+          "linkedIn": "https://www.linkedin.com/in/nathan-mladin-phd-0a997a129/"
         },
         {
           "id": "speaker-004",
@@ -146,7 +149,8 @@
           "expertise": "Comunicare Strategică & Securitate Informațională",
           "featured": false,
           "photo": "/speakers/susana-dragomir.jpg",
-          "bio": "Dr. Susana Dragomir este expert în comunicare strategică, cu peste un deceniu de experiență la nivel european."
+          "bio": "Dr. Susana Dragomir este expert în comunicare strategică, cu peste un deceniu de experiență la nivel european.",
+          "linkedIn": "https://www.linkedin.com/in/susana-dragomir-b6326ab4/"
         },
         {
           "id": "speaker-005",
@@ -155,7 +159,8 @@
           "expertise": "Tehnologie, AI & Cyberpsychology",
           "featured": false,
           "photo": "/speakers/daniel-alb.jpg",
-          "bio": "Daniel Alb este lider de produs și antreprenor în zona de tehnologie și inteligență artificială."
+          "bio": "Daniel Alb este lider de produs și antreprenor în zona de tehnologie și inteligență artificială.",
+          "linkedIn": "https://www.linkedin.com/in/danielalb/"
         }
       ]
     },
