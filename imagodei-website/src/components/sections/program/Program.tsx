@@ -19,7 +19,7 @@ export function Program({ days, translations }: ProgramProps) {
   return (
     <section
       id="program"
-      className="bg-zinc-950 py-20 sm:py-24 lg:py-32"
+      className="relative bg-zinc-900 py-20 sm:py-24 lg:py-32"
       aria-labelledby="program-heading"
       role="region"
     >

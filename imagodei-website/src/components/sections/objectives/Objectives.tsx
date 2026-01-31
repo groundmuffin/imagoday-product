@@ -15,7 +15,7 @@ export function Objectives({ sectionTitle, sectionDescription, objectives }: Obj
   const bottomRow = objectives.slice(3, 5)
 
   return (
-    <section id="objectives" className="bg-zinc-950 py-20 sm:py-24 lg:py-32" aria-labelledby="objectives-heading">
+    <section id="objectives" className="bg-zinc-900 py-20 sm:py-24 lg:py-32" aria-labelledby="objectives-heading">
       <div className="max-w-5xl mx-auto px-6">
         {/* Section Header */}
         <header className="text-center mb-12 sm:mb-16 lg:mb-20">

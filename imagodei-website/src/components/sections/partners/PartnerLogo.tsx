@@ -14,7 +14,7 @@ export function PartnerLogo({ partner }: PartnerLogoProps) {
       href={partner.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex items-center justify-center rounded-xl border border-zinc-200 bg-white p-4 transition-all duration-300 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100/50 dark:border-zinc-700 dark:bg-zinc-800/50 dark:hover:border-sky-500/50 dark:hover:shadow-sky-900/20 sm:p-6"
+      className="group relative flex items-center justify-center rounded-xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100/50 sm:p-6"
       title={partner.fullName || partner.name}
     >
       <div className="relative flex h-16 w-full items-center justify-center sm:h-24">

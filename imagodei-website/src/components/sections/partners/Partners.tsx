@@ -31,29 +31,29 @@ export function Partners({
   return (
     <section
       id="partners"
-      className="relative overflow-hidden bg-zinc-50 py-20 dark:bg-zinc-900 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-zinc-100 py-20 sm:py-24 lg:py-32"
       aria-labelledby="partners-heading"
       role="region"
     >
       {/* Decorative gradient accent */}
-      <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-sky-200/40 via-cyan-100/20 to-transparent blur-3xl dark:from-sky-900/20 dark:via-cyan-900/10" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tl from-cyan-200/30 via-sky-100/20 to-transparent blur-3xl dark:from-cyan-900/15 dark:via-sky-900/10" />
+      <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-sky-200/40 via-cyan-100/20 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tl from-cyan-200/30 via-sky-100/20 to-transparent blur-3xl" />
 
       <div className="relative mx-auto max-w-5xl px-6">
         {/* Partnership Philosophy Section */}
         <header className="mb-16 sm:mb-20 lg:mb-24">
           <h2
             id="partners-heading"
-            className="animate-fade-in-up mb-8 text-3xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-4xl md:text-5xl"
+            className="animate-fade-in-up mb-8 text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl md:text-5xl"
             style={fontHeading}
           >
             {partnershipPhilosophy.headline}
           </h2>
           <div className="space-y-4">
-            <p className="animation-delay-100 animate-fade-in-up text-lg leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-xl">
+            <p className="animation-delay-100 animate-fade-in-up text-lg leading-relaxed text-zinc-700 sm:text-xl">
               {partnershipPhilosophy.description}
             </p>
-            <p className="animation-delay-200 animate-fade-in-up text-base leading-relaxed text-zinc-500 dark:text-zinc-400">
+            <p className="animation-delay-200 animate-fade-in-up text-base leading-relaxed text-zinc-500">
               {partnershipPhilosophy.extendedDescription}
             </p>
           </div>
@@ -79,21 +79,21 @@ export function Partners({
         {/* Target Audience Section - Editorial Style */}
         <div className="mb-16 sm:mb-20 lg:mb-24">
           <div
-            className="animate-fade-in-up rounded-2xl border border-zinc-200 bg-white/80 p-8 backdrop-blur-sm dark:border-zinc-700 dark:bg-zinc-800/50 sm:p-10 lg:p-12"
+            className="animate-fade-in-up rounded-2xl border border-zinc-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm sm:p-10 lg:p-12"
             style={{ animationDelay: '700ms' }}
           >
             <h3
-              className="mb-6 text-xl font-bold text-zinc-900 dark:text-white sm:text-2xl"
+              className="mb-6 text-xl font-bold text-zinc-900 sm:text-2xl"
               style={fontHeading}
             >
               {targetAudience.headline}
             </h3>
-            <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-xl">
+            <p className="text-lg leading-relaxed text-zinc-600 sm:text-xl">
               {targetAudience.audiences.map((audience, index) => (
                 <span key={index}>
-                  <span className="text-zinc-900 dark:text-white">{audience}</span>
+                  <span className="text-zinc-900">{audience}</span>
                   {index < targetAudience.audiences.length - 1 && (
-                    <span className="mx-3 text-sky-400 dark:text-sky-500">•</span>
+                    <span className="mx-3 text-sky-500">•</span>
                   )}
                 </span>
               ))}
@@ -110,7 +110,7 @@ export function Partners({
             {/* Organizers */}
             {organizers.length > 0 && (
               <div className="col-span-2 grid grid-cols-2 gap-5 sm:gap-6">
-                <p className="col-span-2 mb-2 text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+                <p className="col-span-2 mb-2 text-xs font-semibold uppercase tracking-widest text-sky-600">
                   {translations.organizedBy}
                 </p>
                 {organizers.map((partner) => (
@@ -121,7 +121,7 @@ export function Partners({
             {/* Institutional Partners */}
             {institutional.length > 0 && (
               <div className="col-span-2 grid grid-cols-2 gap-5 sm:gap-6">
-                <p className="col-span-2 mb-2 text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+                <p className="col-span-2 mb-2 text-xs font-semibold uppercase tracking-widest text-sky-600">
                   {translations.inPartnershipWith}
                 </p>
                 {institutional.map((partner) => (

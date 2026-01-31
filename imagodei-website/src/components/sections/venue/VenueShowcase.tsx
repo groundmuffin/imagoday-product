@@ -38,11 +38,13 @@ export function VenueShowcase({ venue, translations, onGetDirections }: VenueSho
         {/* Gradient overlays for depth and text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+        {/* Top transition gradient from previous section */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-900 to-transparent" />
       </div>
 
       {/* Content Positioned in Lower Third */}
-      <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-32 sm:px-12 md:px-16 lg:px-24">
-        <div className="max-w-2xl">
+      <div className="relative z-10 flex min-h-screen flex-col justify-end pb-72 pt-32">
+        <div className="mx-auto w-full max-w-5xl px-6">
           {/* Location Badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 backdrop-blur-sm">
             <MapPin className="h-4 w-4 text-sky-400" />
@@ -78,8 +80,8 @@ export function VenueShowcase({ venue, translations, onGetDirections }: VenueSho
         </div>
       </div>
 
-      {/* Subtle Decorative Elements */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/30 to-transparent" />
+      {/* Bottom transition gradient to next section */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent via-zinc-100/50 to-zinc-100" />
 
       {/* Corner Accent — Geometric Elegance */}
       <div className="pointer-events-none absolute right-8 top-8 opacity-30 sm:right-12 sm:top-12">
