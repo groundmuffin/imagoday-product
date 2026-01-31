@@ -71,8 +71,8 @@ export function SpeakerCard({
             ${featured ? 'w-full sm:w-40 md:w-48 aspect-square sm:aspect-auto sm:h-48 md:h-56' : 'w-full aspect-square'}
           `}
         >
-          {/* Duotone base layer - using slightly different color for non-featured */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${featured ? 'from-sky-900 to-cyan-800' : 'from-zinc-800 to-sky-900'}`} />
+          {/* Duotone base layer - consistent for all speakers */}
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-sky-900" />
           <Image
             src={speaker.photo}
             alt={speaker.name}
@@ -85,8 +85,8 @@ export function SpeakerCard({
 
           {/* Featured badge indicator for keynote speakers */}
           {featured && (
-            <div className="absolute top-3 left-3 px-2 py-1 rounded-md bg-sky-500/90 backdrop-blur-sm">
-              <span className="text-xs font-semibold text-white uppercase tracking-wide">Keynote</span>
+            <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-sky-500/50 backdrop-blur-md border border-sky-400/30">
+              <span className="text-[10px] font-medium text-white/90 uppercase tracking-wider">Keynote</span>
             </div>
           )}
         </div>
