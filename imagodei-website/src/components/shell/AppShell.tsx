@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { MainNav } from './MainNav'
 import { MobileNav } from './MobileNav'
+import { ScrollProgress } from '@/components/ui/ScrollProgress'
 
 export interface NavigationItem {
   label: string
@@ -50,7 +51,12 @@ export function AppShell({
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: '#1A3A3A' }}
+    >
+      <ScrollProgress />
+
       <MainNav
         navigationItems={navigationItems}
         registerUrl={registerUrl}

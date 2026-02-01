@@ -14,12 +14,9 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
   const pathname = usePathname()
   const t = useTranslations()
 
+  // Only show speakers nav for now - other sections will be added later
   const navigationItems = [
     { label: t('navigation.speakers'), href: '#speakers' },
-    { label: t('navigation.program'), href: '#program' },
-    { label: t('navigation.venue'), href: '#venue' },
-    { label: t('navigation.partners'), href: '#partners' },
-    { label: t('navigation.contact'), href: '#contact' },
   ]
 
   const handleLanguageChange = (newLocale: 'en' | 'ro') => {
@@ -44,7 +41,7 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
   return (
     <AppShell
       navigationItems={navigationItems}
-      registerUrl="https://example.com/register"
+      registerUrl="https://register.imagodei20.org"
       registerLabel={t('actions.register')}
       languageLabel={t('actions.language')}
       logoText="Imago Dei"

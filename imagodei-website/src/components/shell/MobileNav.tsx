@@ -33,27 +33,38 @@ export function MobileNav({
     <div className="fixed inset-0 z-50 md:hidden">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-zinc-900/50 backdrop-blur-sm"
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{ backgroundColor: 'rgba(15, 31, 42, 0.5)' }}
         onClick={onClose}
       />
 
       {/* Menu Panel */}
-      <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-zinc-50 p-6 shadow-xl dark:bg-zinc-900">
+      <div
+        className="absolute right-0 top-0 h-full w-full max-w-sm p-6 shadow-xl"
+        style={{ backgroundColor: '#1A3A3A' }}
+      >
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
-          <span className="text-xl font-bold text-zinc-900 dark:text-zinc-100 font-heading">
+          <span
+            className="text-xl font-bold"
+            style={{
+              fontFamily: "'Source Serif 4', serif",
+              color: '#F5F0E0'
+            }}
+          >
             Menu
           </span>
           <button
             onClick={onClose}
-            className="rounded-lg p-2 text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            className="rounded-lg p-2 transition-colors"
+            style={{ color: 'rgba(245, 240, 224, 0.7)' }}
             aria-label="Close menu"
           >
             <X className="h-6 w-6" />
           </button>
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigation Links - Inter font */}
         <nav className="mb-8 flex flex-col gap-4">
           {navigationItems.map((item) => (
             <a
@@ -63,11 +74,11 @@ export function MobileNav({
                 e.preventDefault()
                 onNavigate?.(item.href)
               }}
-              className={`text-lg font-medium transition-colors font-heading ${
-                item.isActive
-                  ? 'text-sky-600 dark:text-sky-400'
-                  : 'text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100'
-              }`}
+              className="text-lg font-medium transition-colors"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                color: item.isActive ? '#F5B82E' : 'rgba(245, 240, 224, 0.85)'
+              }}
             >
               {item.label}
             </a>
@@ -76,7 +87,13 @@ export function MobileNav({
 
         {/* Language Switcher */}
         <div className="mb-8">
-          <p className="mb-2 text-sm text-zinc-500 dark:text-zinc-400 font-body">
+          <p
+            className="mb-2 text-sm"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: 'rgba(245, 240, 224, 0.5)'
+            }}
+          >
             {languageLabel}
           </p>
           <LanguageSwitcher
@@ -85,12 +102,17 @@ export function MobileNav({
           />
         </div>
 
-        {/* Register Button */}
+        {/* Register Button - Inter font */}
         <a
           href={registerUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full rounded-full bg-sky-600 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600 font-heading"
+          className="block w-full rounded-full py-3 text-center text-base font-semibold transition-colors"
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            backgroundColor: '#F5B82E',
+            color: '#0F1F2A'
+          }}
         >
           {registerLabel}
         </a>

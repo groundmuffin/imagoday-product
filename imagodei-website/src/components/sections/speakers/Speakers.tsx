@@ -1,132 +1,100 @@
-'use client'
-
-import type { Speaker } from '@/types'
 import { SpeakerCard } from './SpeakerCard'
-import { useScrollAnimation, getStaggeredDelay } from '@/hooks/useScrollAnimation'
 
-interface SpeakersTranslations {
+interface Speaker {
+  id: string
+  name: string
   title: string
-  subtitle: string
-  description: string
-  keynoteSpeakers: string
-  facilitators: string
-  clickToReadBio: string
-  clickToCollapse: string
+  affiliation: string
+  expertise: string
+  photo: string
+  alterPhoto: string
+  bio: string
+  linkedIn?: string
+  website?: string
 }
 
 interface SpeakersProps {
+  title: string
+  subtitle: string
   speakers: Speaker[]
-  translations: SpeakersTranslations
-  onExpand?: (id: string) => void
-  onCollapse?: (id: string) => void
 }
 
-export function Speakers({ speakers, translations, onExpand, onCollapse }: SpeakersProps) {
-  const { ref, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.1 })
-
-  // Split speakers by featured status
-  const featuredSpeakers = speakers.filter((s) => s.featured)
-  const otherSpeakers = speakers.filter((s) => !s.featured)
-
-  const cardTranslations = {
-    clickToReadBio: translations.clickToReadBio,
-    clickToCollapse: translations.clickToCollapse,
-  }
-
+export function Speakers({ title, subtitle, speakers }: SpeakersProps) {
   return (
     <section
       id="speakers"
-      ref={ref}
-      className="bg-zinc-950 py-20 sm:py-24 lg:py-32"
-      aria-labelledby="speakers-heading"
+      className="relative py-24 px-4 overflow-hidden"
+      style={{ backgroundColor: '#1A3A3A' }}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Section Header */}
-        <header className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <span
-            className={`inline-block text-sm font-medium uppercase tracking-widest text-sky-400 mb-4 font-body ${
-              isVisible ? 'animate-fade-in-up' : 'opacity-0'
-            }`}
-          >
-            {translations.subtitle}
-          </span>
-          <h2
-            id="speakers-heading"
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-heading ${
-              isVisible ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'
-            }`}
-          >
-            {translations.title}
-          </h2>
-          <p
-            className={`text-lg text-zinc-400 max-w-2xl mx-auto font-body ${
-              isVisible ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'
-            }`}
-          >
-            {translations.description}
-          </p>
-        </header>
-
-        {/* Featured Speakers - Larger, more prominent cards */}
-        {featuredSpeakers.length > 0 && (
-          <div className="mb-12 sm:mb-16">
-            <h3
-              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 font-body ${
-                isVisible ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'
-              }`}
-            >
-              {translations.keynoteSpeakers}
-            </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-              {featuredSpeakers.map((speaker, index) => (
-                <div
-                  key={speaker.id}
-                  className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
-                  style={isVisible ? getStaggeredDelay(index + 4) : undefined}
-                >
-                  <SpeakerCard
-                    speaker={speaker}
-                    featured
-                    translations={cardTranslations}
-                    onExpand={() => onExpand?.(speaker.id)}
-                    onCollapse={() => onCollapse?.(speaker.id)}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Other Speakers - Grid layout */}
-        {otherSpeakers.length > 0 && (
-          <div>
-            <h3
-              className={`text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6 font-body ${
-                isVisible ? 'animate-fade-in-up animation-delay-500' : 'opacity-0'
-              }`}
-            >
-              {translations.facilitators}
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {otherSpeakers.map((speaker, index) => (
-                <div
-                  key={speaker.id}
-                  className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
-                  style={isVisible ? getStaggeredDelay(index + 6) : undefined}
-                >
-                  <SpeakerCard
-                    speaker={speaker}
-                    translations={cardTranslations}
-                    onExpand={() => onExpand?.(speaker.id)}
-                    onCollapse={() => onCollapse?.(speaker.id)}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+      {/* Background blur accents */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(42, 74, 74, 0.3) 0%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(245, 184, 46, 0.1) 0%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(58, 90, 90, 0.25) 0%, transparent 70%)',
+          }}
+        />
       </div>
 
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{
+              fontFamily: "'Source Serif 4', serif",
+              color: '#F5F0E0',
+            }}
+          >
+            {title}
+          </h2>
+          <p
+            className="text-lg max-w-2xl mx-auto"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: 'rgba(245, 240, 224, 0.6)',
+            }}
+          >
+            {subtitle}
+          </p>
+          <div
+            className="mx-auto mt-6 h-1 w-24 rounded-full"
+            style={{
+              background: 'linear-gradient(to right, #2A4A4A, #F5B82E)',
+            }}
+          />
+        </div>
+
+        {/* Speakers Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {speakers.map((speaker) => (
+            <SpeakerCard
+              key={speaker.id}
+              name={speaker.name}
+              title={speaker.title}
+              affiliation={speaker.affiliation}
+              expertise={speaker.expertise}
+              photo={speaker.photo}
+              alterPhoto={speaker.alterPhoto}
+              bio={speaker.bio}
+              linkedIn={speaker.linkedIn}
+              website={speaker.website}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

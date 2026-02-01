@@ -29,28 +29,40 @@ export function MainNav({
 }: MainNavProps) {
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-zinc-50/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          ? 'backdrop-blur-xl shadow-lg'
+          : 'backdrop-blur-sm'
       }`}
+      style={{
+        backgroundColor: isScrolled
+          ? 'rgba(26, 58, 58, 0.65)'
+          : 'rgba(26, 58, 58, 0.2)',
+        borderBottom: isScrolled
+          ? '1px solid rgba(245, 184, 46, 0.1)'
+          : '1px solid transparent',
+      }}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
-          {/* Logo */}
+          {/* Logo - Source Serif 4 */}
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault()
               onNavigate?.('#')
             }}
-            className="font-heading text-xl font-bold text-zinc-900 dark:text-zinc-100 md:text-2xl"
-            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+            className="text-xl font-bold md:text-2xl transition-all duration-300"
+            style={{
+              fontFamily: "'Source Serif 4', serif",
+              color: '#F5F0E0',
+              textShadow: isScrolled ? 'none' : '0 2px 10px rgba(0,0,0,0.3)',
+            }}
           >
             {logoText}
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Inter font */}
           <div className="hidden items-center gap-8 md:flex">
             {navigationItems.map((item) => (
               <a
@@ -60,19 +72,28 @@ export function MainNav({
                   e.preventDefault()
                   onNavigate?.(item.href)
                 }}
-                className={`text-sm font-medium transition-colors ${
-                  item.isActive
-                    ? 'text-sky-600 dark:text-sky-400'
-                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'
-                }`}
-                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                className="text-sm font-medium transition-colors"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  color: item.isActive ? '#F5B82E' : 'rgba(245, 240, 224, 0.7)',
+                }}
+                onMouseEnter={(e) => {
+                  if (!item.isActive) {
+                    e.currentTarget.style.color = '#F5F0E0'
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!item.isActive) {
+                    e.currentTarget.style.color = 'rgba(245, 240, 224, 0.7)'
+                  }
+                }}
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          {/* Right Side: Language + Register */}
+          {/* Right Side: Language + Register - Inter font */}
           <div className="hidden items-center gap-4 md:flex">
             <LanguageSwitcher
               currentLanguage={currentLanguage}
@@ -82,8 +103,18 @@ export function MainNav({
               href={registerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-sky-500 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-sky-400 hover:shadow-lg hover:shadow-sky-500/30"
-              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              className="rounded-full px-5 py-2 text-sm font-semibold transition-all backdrop-blur-sm"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                backgroundColor: '#F5B82E',
+                color: '#0F1F2A',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFCB45'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#F5B82E'
+              }}
             >
               {registerLabel}
             </a>
@@ -92,7 +123,11 @@ export function MainNav({
           {/* Mobile Menu Button */}
           <button
             onClick={onMobileMenuToggle}
-            className="rounded-lg p-2 text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 md:hidden"
+            className="rounded-lg p-2 md:hidden backdrop-blur-sm"
+            style={{
+              color: '#F5F0E0',
+              backgroundColor: 'rgba(42, 74, 74, 0.3)',
+            }}
             aria-label="Toggle menu"
           >
             <Menu className="h-6 w-6" />

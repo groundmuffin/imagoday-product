@@ -1,11 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
-import { HeroSection } from './HeroSection'
-import { Objectives } from '@/components/sections/objectives'
-import { SpeakersSection } from './SpeakersSection'
-import { Program } from '@/components/sections/program'
-import { VenueSection } from './VenueSection'
-import { Partners } from '@/components/sections/partners'
-import { Contact } from '@/components/sections/contact'
+import { Hero } from '@/components/sections/hero'
+import { Speakers } from '@/components/sections/speakers'
+import { SectionDivider } from '@/components/ui/SectionDivider'
 
 type Params = Promise<{ locale: string }>
 
@@ -13,142 +9,48 @@ export default async function HomePage({ params }: { params: Params }) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const t = await getTranslations('sections.hero')
-  const tObjectives = await getTranslations('sections.objectives')
+  const tHero = await getTranslations('sections.hero')
   const tSpeakers = await getTranslations('sections.speakers')
-  const tProgram = await getTranslations('sections.program')
-  const tVenue = await getTranslations('sections.venue')
-  const tPartners = await getTranslations('sections.partners')
-  const tContact = await getTranslations('sections.contact')
 
-  // Get objectives section data from translations
-  const objectivesData = {
-    sectionTitle: tObjectives('title'),
-    objectives: tObjectives.raw('items'),
+  // Get hero section data from translations
+  const heroData = {
+    title: tHero('title'),
+    subtitle: tHero('subtitle'),
+    editionBadge: tHero('editionBadge'),
+    dateWithDays: tHero('dateWithDays'),
+    location: tHero('location'),
+    introText: tHero('introText'),
+    registerCta: tHero.raw('registerCta'),
   }
 
   // Get speakers section data from translations
   const speakersData = {
-    translations: {
-      title: tSpeakers('title'),
-      subtitle: tSpeakers('subtitle'),
-      description: tSpeakers('description'),
-      keynoteSpeakers: tSpeakers('keynoteSpeakers'),
-      facilitators: tSpeakers('facilitators'),
-      clickToReadBio: tSpeakers('clickToReadBio'),
-      clickToCollapse: tSpeakers('clickToCollapse'),
-    },
+    title: tSpeakers('title'),
+    subtitle: tSpeakers('subtitle'),
     speakers: tSpeakers.raw('items'),
-  }
-
-  // Get program section data from translations
-  const programData = {
-    translations: {
-      title: tProgram('title'),
-      subtitle: tProgram('subtitle'),
-      description: tProgram('description'),
-      comingSoon: tProgram('comingSoon'),
-    },
-    days: tProgram.raw('days'),
-  }
-
-  // Get venue section data from translations
-  const venueData = {
-    translations: {
-      getDirections: tVenue('getDirections'),
-    },
-    venue: tVenue.raw('data'),
-  }
-
-  // Get partners section data from translations
-  const partnersData = {
-    translations: {
-      organizedBy: tPartners('organizedBy'),
-      inPartnershipWith: tPartners('inPartnershipWith'),
-    },
-    philosophy: tPartners.raw('philosophy'),
-    benefits: tPartners.raw('benefits'),
-    targetAudience: tPartners.raw('targetAudience'),
-    partners: tPartners.raw('partners'),
-  }
-
-  // Get contact section data from translations
-  const contactData = {
-    closingQuote: tContact('closingQuote'),
-    contacts: tContact.raw('contacts'),
-  }
-
-  // Get hero section data from translations
-  const heroData = {
-    conference: {
-      label: t('conference.label'),
-      nameParts: t.raw('conference.nameParts'),
-      tagline: t('conference.tagline'),
-      dateDisplay: t('conference.dateDisplay'),
-      startDate: t('conference.startDate'),
-      endDate: t('conference.endDate'),
-      location: t('conference.location'),
-    },
-    hero: {
-      backgroundImageUrl: t('hero.backgroundImageUrl'),
-      backgroundAlt: t('hero.backgroundAlt'),
-      scrollHint: t('hero.scrollHint'),
-      primaryCta: t.raw('hero.primaryCta'),
-      secondaryCta: t.raw('hero.secondaryCta'),
-    },
-    about: {
-      text: t('about.text'),
-      highlights: t.raw('about.highlights'),
-    },
-    manifesto: {
-      sectionTitle: t('manifesto.sectionTitle'),
-      leftColumn: t.raw('manifesto.leftColumn'),
-      rightColumn: t.raw('manifesto.rightColumn'),
-    },
   }
 
   return (
     <div>
-      {/* Hero & Inflection Point Section */}
-      <HeroSection data={heroData} />
-
-      {/* Objectives Section */}
-      <Objectives
-        sectionTitle={objectivesData.sectionTitle}
-        objectives={objectivesData.objectives}
+      {/* Hero Section */}
+      <Hero
+        title={heroData.title}
+        subtitle={heroData.subtitle}
+        editionBadge={heroData.editionBadge}
+        dateWithDays={heroData.dateWithDays}
+        location={heroData.location}
+        introText={heroData.introText}
+        registerCta={heroData.registerCta}
       />
+
+      {/* Decorative Section Divider */}
+      <SectionDivider />
 
       {/* Speakers Section */}
-      <SpeakersSection
+      <Speakers
+        title={speakersData.title}
+        subtitle={speakersData.subtitle}
         speakers={speakersData.speakers}
-        translations={speakersData.translations}
-      />
-
-      {/* Program Section */}
-      <Program
-        days={programData.days}
-        translations={programData.translations}
-      />
-
-      {/* Venue Section */}
-      <VenueSection
-        venue={venueData.venue}
-        translations={venueData.translations}
-      />
-
-      {/* Partners Section */}
-      <Partners
-        partnershipPhilosophy={partnersData.philosophy}
-        partnershipBenefits={partnersData.benefits}
-        targetAudience={partnersData.targetAudience}
-        partners={partnersData.partners}
-        translations={partnersData.translations}
-      />
-
-      {/* Contact Section */}
-      <Contact
-        closingQuote={contactData.closingQuote}
-        contacts={contactData.contacts}
       />
     </div>
   )

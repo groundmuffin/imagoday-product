@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Imago Dei 2.0 - Conference",
+    "description": "International conference on artificial intelligence, ethics, and theology"
+  },
   "navigation": {
     "speakers": "Speakers",
     "program": "Program",
@@ -12,303 +16,77 @@
   },
   "sections": {
     "hero": {
-      "conference": {
-        "label": "International Conference",
-        "nameParts": [
-          { "text": "Imago ", "accent": false },
-          { "text": "Dei", "accent": true },
-          { "text": " 2.0", "accent": false }
-        ],
-        "tagline": "Inflection Point",
-        "dateDisplay": "March 6-7, 2026",
-        "startDate": "2026-03-06",
-        "endDate": "2026-03-07",
-        "location": "Oradea, Romania"
-      },
-      "hero": {
-        "backgroundImageUrl": "/images/creation-of-adam.jpg",
-        "backgroundAlt": "Michelangelo's Creation of Adam - the iconic fresco showing the hands of God and Adam reaching toward each other",
-        "scrollHint": "Discover",
-        "primaryCta": {
-          "label": "Register",
-          "url": "https://register.imagodei20.org",
-          "external": true
-        },
-        "secondaryCta": {
-          "label": "View Program",
-          "url": "#program",
-          "external": false
-        }
-      },
-      "about": {
-        "text": "A conference that brings together perspectives from technology, ethics, and theology to discuss",
-        "highlights": [
-          { "text": "artificial intelligence", "highlighted": true },
-          { "text": ", ", "highlighted": false },
-          { "text": "humanity", "highlighted": true },
-          { "text": ", and ", "highlighted": false },
-          { "text": "moral responsibility", "highlighted": true },
-          { "text": ".", "highlighted": false }
-        ]
-      },
-      "manifesto": {
-        "sectionTitle": "The Inflection Point",
-        "leftColumn": {
-          "paragraphs": [
-            "There are rare moments in history when technological progress changes the way we understand ourselves.",
-            "In the age of artificial intelligence, fundamental questions about {{Imago Dei}} enter a new phase — one in which humanity attempts to create intelligence in its own image."
-          ]
-        },
-        "rightColumn": {
-          "paragraphs": [
-            "We explore how the rapid advance of AI challenges us to rethink what it means to be human, as well as the moral responsibility we carry at this historic inflection point."
-          ],
-          "isItalic": true
-        }
-      },
-      "aboutHeading": "About the conference"
-    },
-    "objectives": {
-      "title": "Objectives",
-      "items": [
-        {
-          "id": "obj-01",
-          "number": "01",
-          "title": "Awareness",
-          "description": "Highlighting AI's significant impact on society, economy, culture, and theology."
-        },
-        {
-          "id": "obj-02",
-          "number": "02",
-          "title": "Interdisciplinary Dialogue",
-          "description": "Creating a space where specialists from technology, ethics, theology, and business can collaborate."
-        },
-        {
-          "id": "obj-03",
-          "number": "03",
-          "title": "Education",
-          "description": "Providing new perspectives, tools, and vocabulary about AI for religious, academic, and civic communities."
-        },
-        {
-          "id": "obj-04",
-          "number": "04",
-          "title": "Anticipation & Preparation",
-          "description": "Exploring possible scenarios (positive and negative) for humanity."
-        },
-        {
-          "id": "obj-05",
-          "number": "05",
-          "title": "Ethical Framework",
-          "description": "Identifying shared values to guide the development and use of AI."
-        }
-      ]
+      "title": "Imago Dei 2.0",
+      "subtitle": "Inflection Point",
+      "editionBadge": "2nd Edition",
+      "dateWithDays": "Friday - Saturday, March 6-7, 2026",
+      "location": "Oradea, Romania",
+      "introText": "There are rare moments in history when technological progress profoundly changes our perspective on our own identity. In the age of artificial intelligence, fundamental questions about Imago Dei enter a new phase — one in which humanity attempts to create intelligence in its own image.",
+      "registerCta": {
+        "label": "Register",
+        "url": "https://register.imagodei20.org"
+      }
     },
     "speakers": {
       "title": "Speakers",
-      "subtitle": "Keynote & Facilitators",
-      "description": "World-renowned experts in artificial intelligence, ethics, and theology",
-      "keynoteSpeakers": "Keynote Speakers",
-      "facilitators": "Facilitators & Panelists",
-      "clickToReadBio": "Click to read bio",
-      "clickToCollapse": "Click to collapse",
+      "subtitle": "Experts in AI, ethics, and theology",
       "items": [
         {
           "id": "speaker-001",
           "name": "Dr. Noreen Herzfeld",
-          "title": "Professor of Theology and Computer Science, College of Saint Benedict",
+          "title": "Professor of Theology and Computer Science",
+          "affiliation": "College of Saint Benedict",
           "expertise": "Artificial Intelligence & Ethics",
-          "featured": true,
-          "photo": "/speakers/noreen-herzfeld.jpg",
+          "photo": "/speakers/noreen.jpg",
+          "alterPhoto": "/speakers/alter_noreen.png",
           "bio": "Dr. Noreen Herzfeld is a Professor of Theology and Computer Science at College of Saint Benedict, expert in artificial intelligence, AI, and ethics.",
           "website": "https://www.csbsju.edu/sot/person/noreen-herzfeld/"
         },
         {
           "id": "speaker-002",
           "name": "Timmy Ghiurău",
-          "title": "Innovation Director & Technology Ethics, Volvo Cars & Designful Ventures",
+          "title": "Innovation Director & Technology Ethics",
+          "affiliation": "Volvo Cars & Designful Ventures",
           "expertise": "Innovation, Culture & Futures",
-          "featured": true,
-          "photo": "/speakers/timmy-ghiurau.jpg",
+          "photo": "/speakers/timmy.jpg",
+          "alterPhoto": "/speakers/alter_timmy.png",
           "bio": "Timmy Ghiurău is an innovation director and technology ethics architect, working on culture and futures at Volvo Cars and Designful Ventures.",
           "linkedIn": "https://www.linkedin.com/in/timmy-ghiurau-71858961/"
         },
         {
           "id": "speaker-003",
           "name": "Dr. Natan Mladin",
-          "title": "Senior Researcher, Theos Think Tank",
+          "title": "Senior Researcher",
+          "affiliation": "Theos Think Tank",
           "expertise": "Technology Ethics & Theology",
-          "featured": false,
-          "photo": "/speakers/natan-mladin.jpg",
+          "photo": "/speakers/natan.jpg",
+          "alterPhoto": "/speakers/alter_natan.png",
           "bio": "Natan Mladin is a Senior Researcher in technology ethics at Theos think tank in London, Associate of the UK Commission for AI, Faith & Civil Society, and co-founder of Faithbase.",
           "linkedIn": "https://www.linkedin.com/in/nathan-mladin-phd-0a997a129/"
         },
         {
           "id": "speaker-004",
           "name": "Dr. Susana Dragomir",
-          "title": "Founder & Director, EU SPIN Research & Consulting",
+          "title": "Founder & Director",
+          "affiliation": "EU SPIN Research & Consulting",
           "expertise": "Strategic Communication & Information Security",
-          "featured": false,
-          "photo": "/speakers/susana-dragomir.jpg",
+          "photo": "/speakers/susana.jpg",
+          "alterPhoto": "/speakers/alter_suzana.png",
           "bio": "Dr. Susana Dragomir is an expert in strategic communication with over a decade of experience at the European level.",
           "linkedIn": "https://www.linkedin.com/in/susana-dragomir-b6326ab4/"
         },
         {
           "id": "speaker-005",
           "name": "Daniel Alb",
-          "title": "VP of Product & Co-founder Faithbase",
+          "title": "VP of Product & Co-founder",
+          "affiliation": "Faithbase",
           "expertise": "Technology, AI & Cyberpsychology",
-          "featured": false,
-          "photo": "/speakers/daniel-alb.jpg",
+          "photo": "/speakers/daniel.jpg",
+          "alterPhoto": "/speakers/alter_daniel.png",
           "bio": "Daniel Alb is a product leader and entrepreneur in technology and artificial intelligence.",
           "linkedIn": "https://www.linkedin.com/in/danielalb/"
         }
       ]
-    },
-    "program": {
-      "title": "Two Days of Reflection",
-      "subtitle": "Conference Program",
-      "description": "A deep exploration of the relationship between artificial intelligence and human dignity",
-      "comingSoon": "Program coming soon",
-      "days": [
-        {
-          "id": "day-1",
-          "label": "Day 1",
-          "date": "March 6",
-          "timeFrame": "Evening",
-          "sessions": [
-            { "id": "session-1-1", "title": "Keynotes" },
-            { "id": "session-1-2", "title": "Panel Discussion" },
-            { "id": "session-1-3", "title": "Q&A Session" }
-          ]
-        },
-        {
-          "id": "day-2",
-          "label": "Day 2",
-          "date": "March 7",
-          "timeFrame": "Full Day",
-          "sessions": [
-            { "id": "session-2-1", "title": "Plenary Sessions" },
-            { "id": "session-2-2", "title": "Parallel Workshops" },
-            { "id": "session-2-3", "title": "Networking & Final Panel" }
-          ]
-        }
-      ]
-    },
-    "venue": {
-      "title": "Venue",
-      "getDirections": "Get Directions",
-      "data": {
-        "id": "venue-001",
-        "name": "Roman Catholic Episcopal Palace",
-        "city": "Oradea",
-        "country": "Romania",
-        "description": "An exceptional architectural and cultural setting, housing the ecclesiastical art collection — a space that encourages contemplation and deep dialogue.",
-        "photoUrl": "/images/venue/episcopal-palace-interior.jpg",
-        "photoAlt": "Interior of the Roman Catholic Episcopal Palace showing baroque architecture and ornate details",
-        "googleMapsUrl": "https://maps.google.com/?q=Palatul+Episcopal+Romano+Catolic+Oradea"
-      }
-    },
-    "partners": {
-      "title": "Partners",
-      "organizedBy": "Organized by",
-      "inPartnershipWith": "In partnership with",
-      "philosophy": {
-        "headline": "Why become a partner?",
-        "description": "At Imago Dei 2.0, partners are not just financial supporters, but active participants in a meaningful dialogue about the impact of artificial intelligence on humanity.",
-        "extendedDescription": "A partnership with Imago Dei 2.0 means alignment with values, access to a community of leaders and professionals concerned with ethics, meaning, and long-term impact."
-      },
-      "benefits": [
-        {
-          "id": "leadership",
-          "title": "Serious ethical leadership",
-          "description": "Align with an initiative that puts responsibility and values at the center of technology development.",
-          "icon": "compass"
-        },
-        {
-          "id": "audience",
-          "title": "High-quality audience",
-          "description": "Connect with technology leaders, theologians, researchers, and entrepreneurs.",
-          "icon": "users"
-        },
-        {
-          "id": "context",
-          "title": "Values-based context",
-          "description": "Participate in a space where dialogue is guided by ethics, meaning, and deep reflection.",
-          "icon": "heart"
-        },
-        {
-          "id": "influence",
-          "title": "Conversations that define the future",
-          "description": "Contribute to shaping the discourse about AI and humanity in the years to come.",
-          "icon": "lightbulb"
-        }
-      ],
-      "targetAudience": {
-        "headline": "Who are we addressing?",
-        "audiences": [
-          "Technology leaders",
-          "Academic specialists",
-          "Theologians",
-          "Applied ethics researchers",
-          "Entrepreneurs",
-          "NGO leaders"
-        ]
-      },
-      "partners": [
-        {
-          "id": "faithbase",
-          "name": "Faithbase",
-          "category": "organizer",
-          "url": "https://faithbase.tech/",
-          "logo": "/logos/partners/faith-base-logo.jpg",
-          "description": "An organization exploring the intersection of faith, technology, and the human future."
-        },
-        {
-          "id": "iesr",
-          "name": "IESR",
-          "fullName": "Institute for the Study of Religions",
-          "category": "organizer",
-          "url": "https://studiireligioase.ro/",
-          "logo": "/logos/partners/institutul-evanghelic-logo.jpg",
-          "description": "Academic institute dedicated to the study of religions."
-        },
-        {
-          "id": "makeitinoradea",
-          "name": "MakeITinOradea",
-          "category": "institutional",
-          "url": "https://makeitinoradea.ro/",
-          "logo": "/logos/partners/makeit.svg",
-          "description": "Tech community in Oradea."
-        },
-        {
-          "id": "episcopia",
-          "name": "Episcopia Romano-Catolică de Oradea",
-          "category": "institutional",
-          "url": "https://sanctusladislaus.ro/",
-          "logo": "/logos/partners/episcopia-logo.png",
-          "description": "Religious institution with a secular tradition."
-        }
-      ]
-    },
-    "contact": {
-      "title": "Contact",
-      "closingQuote": "At moments of inflection, responsibility belongs to those willing to think deeply and act wisely.",
-      "contacts": [
-        {
-          "id": "contact-1",
-          "email": "office@imagodei20.org",
-          "label": "General Inquiries"
-        },
-        {
-          "id": "contact-2",
-          "email": "daniel@faithbase.tech",
-          "label": "Daniel Alb"
-        }
-      ]
     }
-  },
-  "meta": {
-    "title": "Imago Dei 2.0 - Conference",
-    "description": "Imago Dei 2.0 Conference"
   }
 }
