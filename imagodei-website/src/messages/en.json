@@ -42,13 +42,26 @@
         "Come with your questions, your doubts, your hopes. Here, theologians, technologists, philosophers, and all the curious find a common language to navigate together this era of transformation."
       ]
     },
+    "program": {
+      "title": "Program",
+      "subtitle": "What to expect:",
+      "items": [
+        "Plenary sessions with world-class speakers addressing the most challenging questions of our time",
+        "Interactive workshops where you can practically explore the implications of AI in your personal and professional life",
+        "Q&A sessions for direct dialogue with experts and deeper exploration of topics that concern you",
+        "A stunning venue that facilitates not only learning, but also authentic connections between participants"
+      ]
+    },
     "venue": {
       "title": "Venue",
-      "description": "The Baroque Palace is the perfect setting for Imago Dei 2.0 - a space where, centuries ago, different visions of beauty, the sacred, and the human came together. Here, where the dialogue between art and faith once created landmark European music, we continue the conversation about what it means to be made in the image of God in a changing world."
+      "description": "The Baroque Palace is the perfect setting for Imago Dei 2.0 - a space where, centuries ago, different visions of beauty, the sacred, and the human came together. Here, where the dialogue between art and faith once created landmark European music, we continue the conversation about what it means to be made in the image of God in a changing world.",
+      "parkingInfo": "Parking is available near the palace and surroundings.",
+      "mapsLabel": "Open in Google Maps"
     },
     "speakers": {
       "title": "Speakers",
       "subtitle": "Experts in AI, ethics, and theology",
+      "description": "The conference brings together internationally renowned specialists with decades of experience in the field, such as Noreen Herzfeld, theologian and artificial intelligence expert, alongside other thinkers who not only theorize about AI, but actively work at the intersection of faith and innovation.",
       "items": [
         {
           "id": "speaker-001",

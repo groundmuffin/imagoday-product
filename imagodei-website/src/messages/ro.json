@@ -20,7 +20,7 @@
       "title": "Imago Dei 2.0",
       "subtitle": "Inflection Point",
       "editionBadge": "Ediția a II-a",
-      "dateWithDays": "Sâmbătă - Duminică, 6-7 Martie 2026",
+      "dateWithDays": "Vineri - Sâmbătă, 6-7 Martie 2026",
       "location": "Oradea, România",
       "introText": "Există momente rare în istorie când progresul tehnologic ne schimbă profund perspectiva asupra propriei identități. În era inteligenței artificiale, întrebările fundamentale despre Imago Dei intră într-o nouă etapă — una în care omul încearcă să creeze inteligență după propriul chip.",
       "registerCta": {
@@ -42,13 +42,26 @@
         "Vino cu întrebările tale, cu îndoielile, cu speranțele. Aici, teologii, tehnologii, filosofii și toți cei curioși găsesc un limbaj comun pentru a naviga împreună această eră a transformării."
       ]
     },
+    "program": {
+      "title": "Program",
+      "subtitle": "Ce te așteaptă:",
+      "items": [
+        "Sesiuni plenare cu vorbitori de talie internațională care vor aborda cele mai provocatoare întrebări ale momentului",
+        "Ateliere interactive unde vei putea explora practic implicațiile AI în viața personală și profesională",
+        "Sesiuni de Q&A pentru dialog direct cu experții și aprofundarea subiectelor care te preocupă",
+        "O locație superbă care facilitează nu doar învățarea, ci și conexiunile autentice între participanți"
+      ]
+    },
     "venue": {
       "title": "Locație",
-      "description": "Palatul Baroc este locul perfect pentru Imago Dei 2.0 - un spațiu unde, cu secole în urmă, s-au întâlnit viziuni diferite despre frumos, sacru și uman. Aici, unde odată dialogul între artă și credință a creat muzică europeană de referință, continuăm conversația despre ce înseamnă să fim imagine a lui Dumnezeu într-o lume în schimbare."
+      "description": "Palatul Baroc este locul perfect pentru Imago Dei 2.0 - un spațiu unde, cu secole în urmă, s-au întâlnit viziuni diferite despre frumos, sacru și uman. Aici, unde odată dialogul între artă și credință a creat muzică europeană de referință, continuăm conversația despre ce înseamnă să fim imagine a lui Dumnezeu într-o lume în schimbare.",
+      "parkingInfo": "Parcarea e disponibilă lângă palat și împrejurimi.",
+      "mapsLabel": "Deschide în Google Maps"
     },
     "speakers": {
       "title": "Speakeri",
       "subtitle": "Experți în AI, etică și teologie",
+      "description": "Conferința reunește specialiști de renume internațional cu experiență de zeci de ani în domeniu, precum Noreen Herzfeld, teolog și expert în inteligență artificială, alături de alți gânditori care nu doar teoretizează despre AI, ci lucrează activ la intersecția dintre credință și inovație.",
       "items": [
         {
           "id": "speaker-001",

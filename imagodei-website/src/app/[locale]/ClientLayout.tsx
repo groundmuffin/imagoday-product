@@ -17,6 +17,7 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
   const navigationItems = [
     { label: t('navigation.about'), href: '#about' },
     { label: t('navigation.speakers'), href: '#speakers' },
+    { label: t('navigation.program'), href: '#program' },
     { label: t('navigation.venue'), href: '#venue' },
   ]
 

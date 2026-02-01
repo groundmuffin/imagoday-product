@@ -1,11 +1,21 @@
-import Image from 'next/image'
+'use client'
+
+import { VenueSwiper } from './VenueSwiper'
+import { MapPin, Car } from 'lucide-react'
 
 interface VenueProps {
   title: string
   description: string
+  parkingInfo: string
+  mapsUrl: string
+  mapsLabel: string
+  images: {
+    src: string
+    alt: string
+  }[]
 }
 
-export function Venue({ title, description }: VenueProps) {
+export function Venue({ title, description, parkingInfo, mapsUrl, mapsLabel, images }: VenueProps) {
   return (
     <section
       id="venue"
@@ -50,22 +60,9 @@ export function Venue({ title, description }: VenueProps) {
 
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Image */}
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src="/images/venue/episcopal-palace-interior.jpg"
-              alt="Palatul Baroc din Oradea"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            {/* Subtle overlay for better integration */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to top, rgba(26, 58, 58, 0.3) 0%, transparent 50%)',
-              }}
-            />
+          {/* Swipeable Images */}
+          <div className="order-first md:order-first">
+            <VenueSwiper images={images} />
           </div>
 
           {/* Text Content */}
@@ -79,6 +76,46 @@ export function Venue({ title, description }: VenueProps) {
             >
               {description}
             </p>
+
+            {/* Parking Info */}
+            <div
+              className="flex items-start gap-3"
+              style={{ color: 'rgba(245, 240, 224, 0.85)' }}
+            >
+              <Car
+                className="w-5 h-5 mt-1 flex-shrink-0"
+                style={{ color: '#F5B82E' }}
+              />
+              <p
+                className="text-base md:text-lg"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                {parkingInfo}
+              </p>
+            </div>
+
+            {/* Google Maps Link */}
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-base font-medium transition-all hover:scale-105"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                backgroundColor: 'rgba(245, 184, 46, 0.15)',
+                color: '#F5B82E',
+                border: '1px solid rgba(245, 184, 46, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(245, 184, 46, 0.25)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(245, 184, 46, 0.15)'
+              }}
+            >
+              <MapPin className="w-5 h-5" />
+              {mapsLabel}
+            </a>
           </div>
         </div>
       </div>

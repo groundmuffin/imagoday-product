@@ -16,10 +16,11 @@ interface Speaker {
 interface SpeakersProps {
   title: string
   subtitle: string
+  description: string
   speakers: Speaker[]
 }
 
-export function Speakers({ title, subtitle, speakers }: SpeakersProps) {
+export function Speakers({ title, subtitle, description, speakers }: SpeakersProps) {
   return (
     <section
       id="speakers"
@@ -61,13 +62,22 @@ export function Speakers({ title, subtitle, speakers }: SpeakersProps) {
             {title}
           </h2>
           <p
-            className="text-xl max-w-2xl mx-auto"
+            className="text-xl max-w-2xl mx-auto mb-6"
             style={{
               fontFamily: "'Inter', sans-serif",
-              color: 'rgba(245, 240, 224, 0.6)',
+              color: '#F5B82E',
             }}
           >
             {subtitle}
+          </p>
+          <p
+            className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: 'rgba(245, 240, 224, 0.85)',
+            }}
+          >
+            {description}
           </p>
           <div
             className="mx-auto mt-6 h-1 w-24 rounded-full"
