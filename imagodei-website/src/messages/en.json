@@ -45,6 +45,7 @@
     "program": {
       "title": "Program",
       "subtitle": "What to expect:",
+      "disclaimer": "* The program will be updated regularly.",
       "items": [
         "Plenary sessions with world-class speakers addressing the most challenging questions of our time",
         "Interactive workshops where you can practically explore the implications of AI in your personal and professional life",
@@ -57,6 +58,11 @@
       "description": "The Baroque Palace is the perfect setting for Imago Dei 2.0 - a space where, centuries ago, different visions of beauty, the sacred, and the human came together. Here, where the dialogue between art and faith once created landmark European music, we continue the conversation about what it means to be made in the image of God in a changing world.",
       "parkingInfo": "Parking is available near the palace and surroundings.",
       "mapsLabel": "Open in Google Maps"
+    },
+    "footer": {
+      "organizersTitle": "Organizers",
+      "partnersTitle": "Partners",
+      "copyright": "© 2026 Imago Dei 2.0. All rights reserved."
     },
     "speakers": {
       "title": "Speakers",

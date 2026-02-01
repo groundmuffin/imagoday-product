@@ -1,10 +1,11 @@
 interface ProgramProps {
   title: string
   subtitle: string
+  disclaimer: string
   items: string[]
 }
 
-export function Program({ title, subtitle, items }: ProgramProps) {
+export function Program({ title, subtitle, disclaimer, items }: ProgramProps) {
   return (
     <section
       id="program"
@@ -79,6 +80,17 @@ export function Program({ title, subtitle, items }: ProgramProps) {
               </li>
             ))}
           </ul>
+
+          {/* Disclaimer */}
+          <p
+            className="text-sm mt-8 italic"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: 'rgba(245, 240, 224, 0.5)',
+            }}
+          >
+            {disclaimer}
+          </p>
         </div>
       </div>
     </section>

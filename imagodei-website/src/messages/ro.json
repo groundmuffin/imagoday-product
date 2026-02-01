@@ -45,6 +45,7 @@
     "program": {
       "title": "Program",
       "subtitle": "Ce te așteaptă:",
+      "disclaimer": "* Programul va fi actualizat în mod regulat.",
       "items": [
         "Sesiuni plenare cu vorbitori de talie internațională care vor aborda cele mai provocatoare întrebări ale momentului",
         "Ateliere interactive unde vei putea explora practic implicațiile AI în viața personală și profesională",
@@ -57,6 +58,11 @@
       "description": "Palatul Baroc este locul perfect pentru Imago Dei 2.0 - un spațiu unde, cu secole în urmă, s-au întâlnit viziuni diferite despre frumos, sacru și uman. Aici, unde odată dialogul între artă și credință a creat muzică europeană de referință, continuăm conversația despre ce înseamnă să fim imagine a lui Dumnezeu într-o lume în schimbare.",
       "parkingInfo": "Parcarea e disponibilă lângă palat și împrejurimi.",
       "mapsLabel": "Deschide în Google Maps"
+    },
+    "footer": {
+      "organizersTitle": "Organizatori",
+      "partnersTitle": "Parteneri",
+      "copyright": "© 2026 Imago Dei 2.0. Toate drepturile rezervate."
     },
     "speakers": {
       "title": "Speakeri",

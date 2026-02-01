@@ -5,6 +5,7 @@ import { WhyParticipate } from '@/components/sections/why-participate'
 import { Speakers } from '@/components/sections/speakers'
 import { Program } from '@/components/sections/program'
 import { Venue } from '@/components/sections/venue'
+import { Footer } from '@/components/sections/footer'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 
 type Params = Promise<{ locale: string }>
@@ -19,6 +20,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const tVenue = await getTranslations('sections.venue')
   const tSpeakers = await getTranslations('sections.speakers')
   const tProgram = await getTranslations('sections.program')
+  const tFooter = await getTranslations('sections.footer')
 
   // Get hero section data from translations
   const heroData = {
@@ -58,6 +60,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const programData = {
     title: tProgram('title'),
     subtitle: tProgram('subtitle'),
+    disclaimer: tProgram('disclaimer'),
     items: tProgram.raw('items'),
   }
 
@@ -84,6 +87,21 @@ export default async function HomePage({ params }: { params: Params }) {
     subtitle: tSpeakers('subtitle'),
     description: tSpeakers('description'),
     speakers: tSpeakers.raw('items'),
+  }
+
+  // Get footer section data from translations
+  const footerData = {
+    organizersTitle: tFooter('organizersTitle'),
+    partnersTitle: tFooter('partnersTitle'),
+    copyright: tFooter('copyright'),
+    organizers: [
+      { name: 'Institutul Evanghelic', logo: '/logos/partners/institutul-evanghelic-logo.png', url: 'https://studiireligioase.ro/' },
+      { name: 'Faithbase', logo: '/logos/partners/faith-base-logo.avif', url: 'https://faithbase.tech/' },
+    ],
+    partners: [
+      { name: 'Episcopia', logo: '/logos/partners/episcopia-logo.png', url: 'https://varad.org/ro/' },
+      { name: 'Makeit', logo: '/logos/partners/makeit.svg', url: 'https://makeitinoradea.ro/' },
+    ],
   }
 
   return (
@@ -127,6 +145,7 @@ export default async function HomePage({ params }: { params: Params }) {
       <Program
         title={programData.title}
         subtitle={programData.subtitle}
+        disclaimer={programData.disclaimer}
         items={programData.items}
       />
 
@@ -138,6 +157,15 @@ export default async function HomePage({ params }: { params: Params }) {
         mapsUrl={venueData.mapsUrl}
         mapsLabel={venueData.mapsLabel}
         images={venueData.images}
+      />
+
+      {/* Footer */}
+      <Footer
+        organizersTitle={footerData.organizersTitle}
+        partnersTitle={footerData.partnersTitle}
+        organizers={footerData.organizers}
+        partners={footerData.partners}
+        copyright={footerData.copyright}
       />
     </div>
   )
