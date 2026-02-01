@@ -14,9 +14,10 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
   const pathname = usePathname()
   const t = useTranslations()
 
-  // Only show speakers nav for now - other sections will be added later
   const navigationItems = [
+    { label: t('navigation.about'), href: '#about' },
     { label: t('navigation.speakers'), href: '#speakers' },
+    { label: t('navigation.venue'), href: '#venue' },
   ]
 
   const handleLanguageChange = (newLocale: 'en' | 'ro') => {
@@ -44,7 +45,7 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
       registerUrl="https://register.imagodei20.org"
       registerLabel={t('actions.register')}
       languageLabel={t('actions.language')}
-      logoText="Imago Dei"
+      logoText="Imago Dei 2.0"
       currentLanguage={locale}
       onLanguageChange={handleLanguageChange}
       onNavigate={handleNavigate}

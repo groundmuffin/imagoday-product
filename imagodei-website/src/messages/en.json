@@ -4,6 +4,7 @@
     "description": "International conference on artificial intelligence, ethics, and theology"
   },
   "navigation": {
+    "about": "About",
     "speakers": "Speakers",
     "program": "Program",
     "venue": "Venue",
@@ -26,6 +27,24 @@
         "label": "Register",
         "url": "https://register.imagodei20.org"
       }
+    },
+    "about": {
+      "title": "About the Conference",
+      "paragraphs": [
+        "Now in its second edition, the Imago Dei 2.0 conference organized by the Evangelical Institute for Religious Studies, now alongside Faithbase as an organizing partner, aims to bring theology, technology, and humanity into dialogue in an era where these fields intersect more deeply than ever before.",
+        "The first Imago Dei 2.0 conference demonstrated that the meeting between faith and innovation is not only possible but necessary. The conversations held, the questions raised, and the diverse perspectives confirmed for us: we can no longer ignore the impact that AI has on our spiritual and moral dimension."
+      ]
+    },
+    "whyParticipate": {
+      "title": "Why Participate?",
+      "paragraphs": [
+        "Whether you joined us at the first edition or are joining now for the first time, you will find an open space for honest dialogue. We are not seeking to provide definitive answers, but to build together a deeper understanding of this new reality.",
+        "Come with your questions, your doubts, your hopes. Here, theologians, technologists, philosophers, and all the curious find a common language to navigate together this era of transformation."
+      ]
+    },
+    "venue": {
+      "title": "Venue",
+      "description": "The Baroque Palace is the perfect setting for Imago Dei 2.0 - a space where, centuries ago, different visions of beauty, the sacred, and the human came together. Here, where the dialogue between art and faith once created landmark European music, we continue the conversation about what it means to be made in the image of God in a changing world."
     },
     "speakers": {
       "title": "Speakers",

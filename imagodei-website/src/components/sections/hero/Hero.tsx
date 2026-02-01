@@ -85,7 +85,7 @@ export function Hero({
 
           {/* Title */}
           <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
+            className="text-[2.75rem] sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 whitespace-nowrap"
             style={{
               fontFamily: "'Source Serif 4', serif",
               color: '#F5F0E0',
@@ -97,7 +97,7 @@ export function Hero({
           {/* Subtitle with curve accent */}
           <div className="relative mb-8">
             <h2
-              className="text-2xl md:text-3xl lg:text-4xl font-medium italic"
+              className="text-3xl md:text-4xl lg:text-5xl font-medium italic"
               style={{
                 fontFamily: "'Source Serif 4', serif",
                 color: '#F5B82E',
@@ -123,7 +123,7 @@ export function Hero({
           {/* Date and Location */}
           <div className="mb-10">
             <p
-              className="text-lg md:text-xl mb-2"
+              className="text-xl md:text-2xl mb-2"
               style={{
                 fontFamily: "'Inter', sans-serif",
                 color: '#F5F0E0',
@@ -132,7 +132,7 @@ export function Hero({
               {dateWithDays}
             </p>
             <p
-              className="text-base md:text-lg"
+              className="text-lg md:text-xl"
               style={{
                 fontFamily: "'Inter', sans-serif",
                 color: 'rgba(245, 240, 224, 0.6)',
@@ -144,7 +144,7 @@ export function Hero({
 
           {/* Intro Text */}
           <p
-            className="max-w-2xl mx-auto mb-12 text-base md:text-lg leading-relaxed"
+            className="max-w-3xl mx-auto mb-12 text-lg md:text-xl leading-relaxed"
             style={{
               fontFamily: "'Inter', sans-serif",
               color: 'rgba(245, 240, 224, 0.8)',
@@ -158,7 +158,7 @@ export function Hero({
             href={registerCta.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block rounded-full px-8 py-4 text-base font-semibold transition-all hover:scale-105"
+            className="inline-block rounded-full px-10 py-4 text-lg font-semibold transition-all hover:scale-105"
             style={{
               fontFamily: "'Inter', sans-serif",
               backgroundColor: '#F5B82E',

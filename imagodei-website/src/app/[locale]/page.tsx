@@ -1,5 +1,8 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/sections/hero'
+import { About } from '@/components/sections/about'
+import { WhyParticipate } from '@/components/sections/why-participate'
+import { Venue } from '@/components/sections/venue'
 import { Speakers } from '@/components/sections/speakers'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 
@@ -10,6 +13,9 @@ export default async function HomePage({ params }: { params: Params }) {
   setRequestLocale(locale)
 
   const tHero = await getTranslations('sections.hero')
+  const tAbout = await getTranslations('sections.about')
+  const tWhyParticipate = await getTranslations('sections.whyParticipate')
+  const tVenue = await getTranslations('sections.venue')
   const tSpeakers = await getTranslations('sections.speakers')
 
   // Get hero section data from translations
@@ -21,6 +27,24 @@ export default async function HomePage({ params }: { params: Params }) {
     location: tHero('location'),
     introText: tHero('introText'),
     registerCta: tHero.raw('registerCta'),
+  }
+
+  // Get about section data from translations
+  const aboutData = {
+    title: tAbout('title'),
+    paragraphs: tAbout.raw('paragraphs'),
+  }
+
+  // Get why participate section data from translations
+  const whyParticipateData = {
+    title: tWhyParticipate('title'),
+    paragraphs: tWhyParticipate.raw('paragraphs'),
+  }
+
+  // Get venue section data from translations
+  const venueData = {
+    title: tVenue('title'),
+    description: tVenue('description'),
   }
 
   // Get speakers section data from translations
@@ -46,11 +70,29 @@ export default async function HomePage({ params }: { params: Params }) {
       {/* Decorative Section Divider */}
       <SectionDivider />
 
+      {/* About Section */}
+      <About
+        title={aboutData.title}
+        paragraphs={aboutData.paragraphs}
+      />
+
+      {/* Why Participate Section */}
+      <WhyParticipate
+        title={whyParticipateData.title}
+        paragraphs={whyParticipateData.paragraphs}
+      />
+
       {/* Speakers Section */}
       <Speakers
         title={speakersData.title}
         subtitle={speakersData.subtitle}
         speakers={speakersData.speakers}
+      />
+
+      {/* Venue Section */}
+      <Venue
+        title={venueData.title}
+        description={venueData.description}
       />
     </div>
   )

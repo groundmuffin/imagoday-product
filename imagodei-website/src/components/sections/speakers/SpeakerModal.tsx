@@ -65,35 +65,35 @@ export function SpeakerModal({
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-xl"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl"
         style={{
           backgroundColor: '#1A3A3A',
           border: '1px solid rgba(245, 184, 46, 0.2)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
+        {/* Close button - absolute positioned */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full transition-colors"
+          className="absolute top-4 right-4 z-20 p-2 rounded-full transition-colors"
           style={{
-            backgroundColor: 'rgba(42, 74, 74, 0.8)',
+            backgroundColor: 'rgba(42, 74, 74, 0.9)',
             color: '#F5F0E0',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = 'rgba(245, 184, 46, 0.3)'
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(42, 74, 74, 0.8)'
+            e.currentTarget.style.backgroundColor = 'rgba(42, 74, 74, 0.9)'
           }}
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row md:items-stretch">
           {/* Left - Photo */}
           <div
-            className="relative w-full md:w-2/5 aspect-square md:aspect-auto md:min-h-[400px]"
+            className="relative w-full md:w-2/5 aspect-[4/3] md:aspect-auto md:self-stretch flex-shrink-0"
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
           >
@@ -118,7 +118,7 @@ export function SpeakerModal({
           </div>
 
           {/* Right - Content */}
-          <div className="flex-1 p-6 md:p-8 overflow-y-auto max-h-[60vh] md:max-h-[90vh]">
+          <div className="flex-1 p-6 md:p-8">
             <h2
               className="text-2xl md:text-3xl font-bold mb-2"
               style={{

@@ -52,7 +52,7 @@ export function Speakers({ title, subtitle, speakers }: SpeakersProps) {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-5xl md:text-6xl font-bold mb-4"
             style={{
               fontFamily: "'Source Serif 4', serif",
               color: '#F5F0E0',
@@ -61,7 +61,7 @@ export function Speakers({ title, subtitle, speakers }: SpeakersProps) {
             {title}
           </h2>
           <p
-            className="text-lg max-w-2xl mx-auto"
+            className="text-xl max-w-2xl mx-auto"
             style={{
               fontFamily: "'Inter', sans-serif",
               color: 'rgba(245, 240, 224, 0.6)',

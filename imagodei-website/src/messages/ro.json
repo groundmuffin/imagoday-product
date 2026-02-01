@@ -4,6 +4,7 @@
     "description": "Conferință internațională despre inteligența artificială, etică și teologie"
   },
   "navigation": {
+    "about": "Despre",
     "speakers": "Speakeri",
     "program": "Program",
     "venue": "Locație",
@@ -19,13 +20,31 @@
       "title": "Imago Dei 2.0",
       "subtitle": "Inflection Point",
       "editionBadge": "Ediția a II-a",
-      "dateWithDays": "6-7 Martie 2026",
+      "dateWithDays": "Sâmbătă - Duminică, 6-7 Martie 2026",
       "location": "Oradea, România",
       "introText": "Există momente rare în istorie când progresul tehnologic ne schimbă profund perspectiva asupra propriei identități. În era inteligenței artificiale, întrebările fundamentale despre Imago Dei intră într-o nouă etapă — una în care omul încearcă să creeze inteligență după propriul chip.",
       "registerCta": {
         "label": "Înregistrare",
         "url": "https://register.imagodei20.org"
       }
+    },
+    "about": {
+      "title": "Despre Conferință",
+      "paragraphs": [
+        "Aflată la a doua ediție, conferința Imago Dei 2.0 organizată de Institutul Evanghelic de Studii Religioase, acum alături de Faithbase ca partener organizator, își propune să aducă în dialog teologia, tehnologia și umanitatea într-o epocă în care aceste domenii se intersectează mai profund ca niciodată.",
+        "Prima conferință Imago Dei 2.0 a demonstrat că întâlnirea dintre credință și inovație nu doar că este posibilă, ci și necesară. Conversațiile purtate, întrebările ridicate și perspectivele diverse ne-au confirmat: nu mai putem ignora impactul pe care AI îl are asupra dimensiunii noastre spirituale și morale."
+      ]
+    },
+    "whyParticipate": {
+      "title": "De ce să participi?",
+      "paragraphs": [
+        "Indiferent dacă ai fost alături de noi la prima ediție sau te alături acum pentru prima dată, vei găsi un spațiu deschis de dialog sincer. Nu căutăm să oferim răspunsuri definitive, ci să construim împreună o înțelegere mai profundă a acestei noi realități.",
+        "Vino cu întrebările tale, cu îndoielile, cu speranțele. Aici, teologii, tehnologii, filosofii și toți cei curioși găsesc un limbaj comun pentru a naviga împreună această eră a transformării."
+      ]
+    },
+    "venue": {
+      "title": "Locație",
+      "description": "Palatul Baroc este locul perfect pentru Imago Dei 2.0 - un spațiu unde, cu secole în urmă, s-au întâlnit viziuni diferite despre frumos, sacru și uman. Aici, unde odată dialogul între artă și credință a creat muzică europeană de referință, continuăm conversația despre ce înseamnă să fim imagine a lui Dumnezeu într-o lume în schimbare."
     },
     "speakers": {
       "title": "Speakeri",
