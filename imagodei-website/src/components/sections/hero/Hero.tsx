@@ -1,6 +1,7 @@
 'use client'
 
 import { InflectionCurve } from './InflectionCurve'
+import { RegisterButton } from '@/components/ui/RegisterButton'
 
 interface HeroProps {
   title: string
@@ -11,7 +12,6 @@ interface HeroProps {
   introText: string
   registerCta: {
     label: string
-    url: string
   }
 }
 
@@ -37,25 +37,25 @@ export function Hero({
         <div
           className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(42, 74, 74, 0.4) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.4) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute -top-20 right-0 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(245, 184, 46, 0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(223, 201, 56, 0.15) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute top-1/3 -left-20 w-[350px] h-[350px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(58, 90, 90, 0.35) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.35) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute bottom-20 right-10 w-[450px] h-[450px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(229, 188, 106, 0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(223, 201, 56, 0.12) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -75,9 +75,9 @@ export function Hero({
             className="inline-block mb-6 px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm"
             style={{
               fontFamily: "'Inter', sans-serif",
-              backgroundColor: 'rgba(245, 184, 46, 0.15)',
-              color: '#F5B82E',
-              border: '1px solid rgba(245, 184, 46, 0.3)',
+              backgroundColor: 'rgba(223, 201, 56, 0.15)',
+              color: '#DFC938',
+              border: '1px solid rgba(223, 201, 56, 0.3)',
             }}
           >
             {editionBadge}
@@ -100,7 +100,7 @@ export function Hero({
               className="text-3xl md:text-4xl lg:text-5xl font-medium italic"
               style={{
                 fontFamily: "'Source Serif 4', serif",
-                color: '#F5B82E',
+                color: '#DFC938',
               }}
             >
               {subtitle}
@@ -113,7 +113,7 @@ export function Hero({
               <path
                 d="M 10 20 Q 100 5, 190 20"
                 fill="none"
-                stroke="#F5B82E"
+                stroke="#DFC938"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
@@ -154,27 +154,7 @@ export function Hero({
           </p>
 
           {/* CTA Button */}
-          <a
-            href={registerCta.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-full px-10 py-4 text-lg font-semibold transition-all hover:scale-105"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              backgroundColor: '#F5B82E',
-              color: '#0F1F2A',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFCB45'
-              e.currentTarget.style.boxShadow = '0 0 30px rgba(245, 184, 46, 0.4)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#F5B82E'
-              e.currentTarget.style.boxShadow = 'none'
-            }}
-          >
-            {registerCta.label}
-          </a>
+          <RegisterButton label={registerCta.label} variant="primary" />
         </div>
 
         {/* Scroll indicator */}

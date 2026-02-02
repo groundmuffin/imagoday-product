@@ -37,16 +37,16 @@ export function InflectionCurve({ className = '' }: InflectionCurveProps) {
     >
       <defs>
         <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#2A4A4A" />
-          <stop offset="30%" stopColor="#3A5A5A" />
-          <stop offset="50%" stopColor="#F5B82E" />
-          <stop offset="70%" stopColor="#FFCB45" />
-          <stop offset="100%" stopColor="#F5B82E" />
+          <stop offset="0%" stopColor="#96F1D9" />
+          <stop offset="30%" stopColor="#96F1D9" />
+          <stop offset="50%" stopColor="#DFC938" />
+          <stop offset="70%" stopColor="#E8D856" />
+          <stop offset="100%" stopColor="#DFC938" />
         </linearGradient>
         <linearGradient id="curveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#3A5A5A" />
-          <stop offset="50%" stopColor="#F5B82E" />
-          <stop offset="100%" stopColor="#2A4A4A" />
+          <stop offset="0%" stopColor="#96F1D9" />
+          <stop offset="50%" stopColor="#DFC938" />
+          <stop offset="100%" stopColor="#96F1D9" />
         </linearGradient>
         {/* Glow filter */}
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -64,7 +64,7 @@ export function InflectionCurve({ className = '' }: InflectionCurveProps) {
             Q 50 100, 100 130
             Q 150 160, 200 100`}
         fill="none"
-        stroke="#3A5A5A"
+        stroke="#96F1D9"
         strokeWidth="1"
         strokeLinecap="round"
         opacity="0.3"
@@ -74,7 +74,7 @@ export function InflectionCurve({ className = '' }: InflectionCurveProps) {
             Q 250 40, 300 70
             Q 350 100, 400 50`}
         fill="none"
-        stroke="#3A5A5A"
+        stroke="#96F1D9"
         strokeWidth="1"
         strokeLinecap="round"
         opacity="0.3"
@@ -109,7 +109,7 @@ export function InflectionCurve({ className = '' }: InflectionCurveProps) {
         cx="200"
         cy="100"
         r="8"
-        fill="#F5B82E"
+        fill="#DFC938"
         filter="url(#glow)"
         style={{
           opacity: 0.7 + (scrollProgress * 0.3),
@@ -126,10 +126,10 @@ export function InflectionCurve({ className = '' }: InflectionCurveProps) {
       />
 
       {/* Small accent dots along the curve */}
-      <circle cx="80" cy={animatedControlY + 30} r="2" fill="#F5B82E" opacity="0.4" />
-      <circle cx="140" cy={animatedControlY + 5} r="1.5" fill="#FFCB45" opacity="0.3" />
-      <circle cx="260" cy={200 - animatedControlY - 5} r="1.5" fill="#FFCB45" opacity="0.3" />
-      <circle cx="320" cy={200 - animatedControlY - 30} r="2" fill="#F5B82E" opacity="0.4" />
+      <circle cx="80" cy={animatedControlY + 30} r="2" fill="#DFC938" opacity="0.4" />
+      <circle cx="140" cy={animatedControlY + 5} r="1.5" fill="#E8D856" opacity="0.3" />
+      <circle cx="260" cy={200 - animatedControlY - 5} r="1.5" fill="#E8D856" opacity="0.3" />
+      <circle cx="320" cy={200 - animatedControlY - 30} r="2" fill="#DFC938" opacity="0.4" />
     </svg>
   )
 }

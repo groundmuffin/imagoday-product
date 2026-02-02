@@ -59,6 +59,24 @@
       "parkingInfo": "Parcarea e disponibilă lângă palat și împrejurimi.",
       "mapsLabel": "Deschide în Google Maps"
     },
+    "why": {
+      "title": "De ce organizăm această conferință?",
+      "description": "Promovăm conștientizarea impactului profund al inteligenței artificiale și facilităm dialogul interdisciplinar între specialiști din tehnologie, etică, teologie și business.",
+      "pillars": [
+        {
+          "title": "Educăm",
+          "description": "Comunitățile religioase, academice și civice despre implicațiile AI"
+        },
+        {
+          "title": "Anticipăm",
+          "description": "Scenarii viitoare și provocările etice care ne așteaptă"
+        },
+        {
+          "title": "Construim",
+          "description": "Împreună un cadru etic bazat pe valori comune, care să ghideze dezvoltarea responsabilă a inteligenței artificiale"
+        }
+      ]
+    },
     "footer": {
       "organizersTitle": "Organizatori",
       "partnersTitle": "Parteneri",

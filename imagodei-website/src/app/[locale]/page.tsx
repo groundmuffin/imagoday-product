@@ -5,6 +5,7 @@ import { WhyParticipate } from '@/components/sections/why-participate'
 import { Speakers } from '@/components/sections/speakers'
 import { Program } from '@/components/sections/program'
 import { Venue } from '@/components/sections/venue'
+import { Why } from '@/components/sections/why'
 import { Footer } from '@/components/sections/footer'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 
@@ -21,6 +22,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const tSpeakers = await getTranslations('sections.speakers')
   const tProgram = await getTranslations('sections.program')
   const tFooter = await getTranslations('sections.footer')
+  const tWhy = await getTranslations('sections.why')
 
   // Get hero section data from translations
   const heroData = {
@@ -30,7 +32,9 @@ export default async function HomePage({ params }: { params: Params }) {
     dateWithDays: tHero('dateWithDays'),
     location: tHero('location'),
     introText: tHero('introText'),
-    registerCta: tHero.raw('registerCta'),
+    registerCta: {
+      label: tHero('registerCta.label'),
+    },
   }
 
   // Get about section data from translations
@@ -44,13 +48,16 @@ export default async function HomePage({ params }: { params: Params }) {
     title: tWhyParticipate('title'),
     paragraphs: tWhyParticipate.raw('paragraphs'),
     images: [
-      { src: '/images/participate/ImagoDei2.0 - 0007.jpg', alt: 'Imago Dei Conference' },
+      { src: '/images/participate/ImagoDei2.0 - 0012.jpg', alt: 'Imago Dei Conference' },
+      { src: '/images/participate/ImagoDei2.0 - 0014.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0017.jpg', alt: 'Imago Dei Conference' },
+      { src: '/images/participate/ImagoDei2.0 - 0020.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0025.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0046.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0091.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0109.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0128.jpg', alt: 'Imago Dei Conference' },
+      { src: '/images/participate/ImagoDei2.0 - 0139.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0147.jpg', alt: 'Imago Dei Conference' },
       { src: '/images/participate/ImagoDei2.0 - 0182.jpg', alt: 'Imago Dei Conference' },
     ],
@@ -89,6 +96,13 @@ export default async function HomePage({ params }: { params: Params }) {
     speakers: tSpeakers.raw('items'),
   }
 
+  // Get why section data from translations
+  const whyData = {
+    title: tWhy('title'),
+    description: tWhy('description'),
+    pillars: tWhy.raw('pillars'),
+  }
+
   // Get footer section data from translations
   const footerData = {
     organizersTitle: tFooter('organizersTitle'),
@@ -124,6 +138,8 @@ export default async function HomePage({ params }: { params: Params }) {
       <About
         title={aboutData.title}
         paragraphs={aboutData.paragraphs}
+        imageSrc="/images/about/about_teaser.png"
+        imageAlt="Imago Dei Conference"
       />
 
       {/* Why Participate Section */}
@@ -157,6 +173,13 @@ export default async function HomePage({ params }: { params: Params }) {
         mapsUrl={venueData.mapsUrl}
         mapsLabel={venueData.mapsLabel}
         images={venueData.images}
+      />
+
+      {/* Why Section */}
+      <Why
+        title={whyData.title}
+        description={whyData.description}
+        pillars={whyData.pillars}
       />
 
       {/* Footer */}

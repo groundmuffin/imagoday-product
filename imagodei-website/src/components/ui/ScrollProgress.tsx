@@ -22,13 +22,13 @@ export function ScrollProgress() {
   return (
     <div
       className="fixed top-0 left-0 right-0 z-[60] h-[3px]"
-      style={{ backgroundColor: 'rgba(42, 74, 74, 0.5)' }}
+      style={{ backgroundColor: 'rgba(150, 241, 217, 0.5)' }}
     >
       <div
         className="h-full transition-all duration-75"
         style={{
           width: `${progress}%`,
-          background: 'linear-gradient(to right, #2A4A4A, #F5B82E)',
+          background: 'linear-gradient(to right, #96F1D9, #DFC938)',
         }}
       />
     </div>

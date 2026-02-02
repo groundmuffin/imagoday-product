@@ -32,19 +32,19 @@ export function Speakers({ title, subtitle, description, speakers }: SpeakersPro
         <div
           className="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(42, 74, 74, 0.3) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.3) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(245, 184, 46, 0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(223, 201, 56, 0.1) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(58, 90, 90, 0.25) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.25) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -65,7 +65,7 @@ export function Speakers({ title, subtitle, description, speakers }: SpeakersPro
             className="text-xl max-w-2xl mx-auto mb-6"
             style={{
               fontFamily: "'Inter', sans-serif",
-              color: '#F5B82E',
+              color: '#DFC938',
             }}
           >
             {subtitle}
@@ -82,7 +82,7 @@ export function Speakers({ title, subtitle, description, speakers }: SpeakersPro
           <div
             className="mx-auto mt-6 h-1 w-24 rounded-full"
             style={{
-              background: 'linear-gradient(to right, #2A4A4A, #F5B82E)',
+              background: 'linear-gradient(to right, #96F1D9, #DFC938)',
             }}
           />
         </div>

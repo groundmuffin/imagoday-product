@@ -2,12 +2,12 @@
 
 import { X } from 'lucide-react'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { RegisterButton } from '@/components/ui/RegisterButton'
 import type { NavigationItem } from './AppShell'
 
 interface MobileNavProps {
   isOpen: boolean
   navigationItems: NavigationItem[]
-  registerUrl: string
   registerLabel: string
   languageLabel: string
   currentLanguage: 'en' | 'ro'
@@ -19,7 +19,6 @@ interface MobileNavProps {
 export function MobileNav({
   isOpen,
   navigationItems,
-  registerUrl,
   registerLabel,
   languageLabel,
   currentLanguage,
@@ -77,7 +76,7 @@ export function MobileNav({
               className="text-lg font-medium transition-colors"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                color: item.isActive ? '#F5B82E' : 'rgba(245, 240, 224, 0.85)'
+                color: item.isActive ? '#DFC938' : 'rgba(245, 240, 224, 0.85)'
               }}
             >
               {item.label}
@@ -88,7 +87,7 @@ export function MobileNav({
         {/* Language Switcher */}
         <div className="mb-8">
           <p
-            className="mb-2 text-sm"
+            className="mb-3 text-sm"
             style={{
               fontFamily: "'Inter', sans-serif",
               color: 'rgba(245, 240, 224, 0.5)'
@@ -96,26 +95,16 @@ export function MobileNav({
           >
             {languageLabel}
           </p>
-          <LanguageSwitcher
-            currentLanguage={currentLanguage}
-            onLanguageChange={onLanguageChange}
-          />
+          <div className="inline-block">
+            <LanguageSwitcher
+              currentLanguage={currentLanguage}
+              onLanguageChange={onLanguageChange}
+            />
+          </div>
         </div>
 
         {/* Register Button - Inter font */}
-        <a
-          href={registerUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full rounded-full py-3 text-center text-base font-semibold transition-colors"
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            backgroundColor: '#F5B82E',
-            color: '#0F1F2A'
-          }}
-        >
-          {registerLabel}
-        </a>
+        <RegisterButton label={registerLabel} variant="mobile" />
       </div>
     </div>
   )

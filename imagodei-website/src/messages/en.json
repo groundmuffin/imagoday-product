@@ -59,6 +59,24 @@
       "parkingInfo": "Parking is available near the palace and surroundings.",
       "mapsLabel": "Open in Google Maps"
     },
+    "why": {
+      "title": "Why do we organize this conference?",
+      "description": "We promote awareness of the profound impact of artificial intelligence and facilitate interdisciplinary dialogue between specialists in technology, ethics, theology, and business.",
+      "pillars": [
+        {
+          "title": "Educate",
+          "description": "Religious, academic, and civic communities about the implications of AI"
+        },
+        {
+          "title": "Anticipate",
+          "description": "Future scenarios and the ethical challenges that await us"
+        },
+        {
+          "title": "Build",
+          "description": "Together an ethical framework based on shared values to guide the responsible development of artificial intelligence"
+        }
+      ]
+    },
     "footer": {
       "organizersTitle": "Organizers",
       "partnersTitle": "Partners",

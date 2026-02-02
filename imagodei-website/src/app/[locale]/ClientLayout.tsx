@@ -43,7 +43,6 @@ export function ClientLayout({ children, locale }: ClientLayoutProps) {
   return (
     <AppShell
       navigationItems={navigationItems}
-      registerUrl="https://register.imagodei20.org"
       registerLabel={t('actions.register')}
       languageLabel={t('actions.language')}
       logoText="Imago Dei 2.0"

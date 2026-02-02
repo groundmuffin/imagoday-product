@@ -35,8 +35,8 @@ export function SpeakerCard({
       <article
         className="group p-4 rounded-lg cursor-pointer transition-colors"
         style={{
-          backgroundColor: 'rgba(42, 74, 74, 0.3)',
-          border: '1px solid rgba(245, 184, 46, 0.1)',
+          backgroundColor: 'rgba(150, 241, 217, 0.3)',
+          border: '1px solid rgba(223, 201, 56, 0.1)',
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -81,7 +81,7 @@ export function SpeakerCard({
             className="text-sm mt-1"
             style={{
               fontFamily: "'Inter', sans-serif",
-              color: '#F5B82E',
+              color: '#DFC938',
             }}
           >
             {title}

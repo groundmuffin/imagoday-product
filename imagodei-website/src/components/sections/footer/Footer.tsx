@@ -31,13 +31,13 @@ export function Footer({
         <div
           className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(42, 74, 74, 0.2) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.2) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(245, 184, 46, 0.05) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(223, 201, 56, 0.05) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -49,7 +49,7 @@ export function Footer({
             className="text-xl md:text-2xl font-bold text-center mb-8"
             style={{
               fontFamily: "'Source Serif 4', serif",
-              color: '#F5B82E',
+              color: '#DFC938',
             }}
           >
             {organizersTitle}
@@ -78,7 +78,7 @@ export function Footer({
         {/* Divider */}
         <div
           className="mx-auto h-px w-48 mb-12"
-          style={{ backgroundColor: 'rgba(245, 184, 46, 0.2)' }}
+          style={{ backgroundColor: 'rgba(223, 201, 56, 0.2)' }}
         />
 
         {/* Partners Section */}
@@ -119,7 +119,7 @@ export function Footer({
           style={{
             fontFamily: "'Inter', sans-serif",
             color: 'rgba(245, 240, 224, 0.4)',
-            borderColor: 'rgba(245, 184, 46, 0.1)',
+            borderColor: 'rgba(223, 201, 56, 0.1)',
           }}
         >
           {copyright}

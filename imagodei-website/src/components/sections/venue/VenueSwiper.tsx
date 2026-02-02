@@ -35,8 +35,8 @@ export function VenueSwiper({ images }: VenueSwiperProps) {
   }
 
   return (
-    <div className="relative w-full max-w-md mx-auto">
-      <div className="relative w-full h-[350px] md:h-[400px]">
+    <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
+      <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px]">
         <Swiper
           effect="cards"
           grabCursor={true}
@@ -55,7 +55,7 @@ export function VenueSwiper({ images }: VenueSwiperProps) {
               <div
                 className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl select-none"
                 style={{
-                  border: '2px solid rgba(245, 184, 46, 0.2)',
+                  border: '2px solid rgba(223, 201, 56, 0.2)',
                   backgroundColor: '#1A3A3A',
                 }}
               >
@@ -86,7 +86,7 @@ export function VenueSwiper({ images }: VenueSwiperProps) {
           disabled={currentIndex === 0}
           className="p-2 rounded-full transition-all disabled:opacity-30"
           style={{
-            backgroundColor: 'rgba(42, 74, 74, 0.5)',
+            backgroundColor: 'rgba(150, 241, 217, 0.5)',
             color: '#F5F0E0',
           }}
         >
@@ -111,8 +111,8 @@ export function VenueSwiper({ images }: VenueSwiperProps) {
           disabled={currentIndex === images.length - 1}
           className="p-2 rounded-full transition-all disabled:opacity-30"
           style={{
-            backgroundColor: 'rgba(245, 184, 46, 0.3)',
-            color: '#F5B82E',
+            backgroundColor: 'rgba(223, 201, 56, 0.3)',
+            color: '#DFC938',
           }}
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

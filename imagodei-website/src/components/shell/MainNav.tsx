@@ -2,11 +2,11 @@
 
 import { Menu } from 'lucide-react'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { RegisterButton } from '@/components/ui/RegisterButton'
 import type { NavigationItem } from './AppShell'
 
 interface MainNavProps {
   navigationItems: NavigationItem[]
-  registerUrl: string
   registerLabel: string
   logoText: string
   currentLanguage: 'en' | 'ro'
@@ -18,7 +18,6 @@ interface MainNavProps {
 
 export function MainNav({
   navigationItems,
-  registerUrl,
   registerLabel,
   logoText,
   currentLanguage,
@@ -39,7 +38,7 @@ export function MainNav({
           ? 'rgba(26, 58, 58, 0.65)'
           : 'rgba(26, 58, 58, 0.2)',
         borderBottom: isScrolled
-          ? '1px solid rgba(245, 184, 46, 0.1)'
+          ? '1px solid rgba(223, 201, 56, 0.1)'
           : '1px solid transparent',
       }}
     >
@@ -75,7 +74,7 @@ export function MainNav({
                 className="text-sm font-medium transition-colors"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  color: item.isActive ? '#F5B82E' : 'rgba(245, 240, 224, 0.7)',
+                  color: item.isActive ? '#DFC938' : 'rgba(245, 240, 224, 0.7)',
                 }}
                 onMouseEnter={(e) => {
                   if (!item.isActive) {
@@ -99,25 +98,7 @@ export function MainNav({
               currentLanguage={currentLanguage}
               onLanguageChange={onLanguageChange}
             />
-            <a
-              href={registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full px-5 py-2 text-sm font-semibold transition-all backdrop-blur-sm"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                backgroundColor: '#F5B82E',
-                color: '#0F1F2A',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFCB45'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#F5B82E'
-              }}
-            >
-              {registerLabel}
-            </a>
+            <RegisterButton label={registerLabel} variant="nav" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -126,7 +107,7 @@ export function MainNav({
             className="rounded-lg p-2 md:hidden backdrop-blur-sm"
             style={{
               color: '#F5F0E0',
-              backgroundColor: 'rgba(42, 74, 74, 0.3)',
+              backgroundColor: 'rgba(150, 241, 217, 0.3)',
             }}
             aria-label="Toggle menu"
           >

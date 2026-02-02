@@ -17,13 +17,13 @@ export function Program({ title, subtitle, disclaimer, items }: ProgramProps) {
         <div
           className="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(42, 74, 74, 0.3) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.3) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(245, 184, 46, 0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(223, 201, 56, 0.08) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -43,7 +43,7 @@ export function Program({ title, subtitle, disclaimer, items }: ProgramProps) {
           <div
             className="mx-auto h-1 w-24 rounded-full"
             style={{
-              background: 'linear-gradient(to right, #2A4A4A, #F5B82E)',
+              background: 'linear-gradient(to right, #96F1D9, #DFC938)',
             }}
           />
         </div>
@@ -55,7 +55,7 @@ export function Program({ title, subtitle, disclaimer, items }: ProgramProps) {
             className="text-2xl md:text-3xl font-bold"
             style={{
               fontFamily: "'Source Serif 4', serif",
-              color: '#F5B82E',
+              color: '#DFC938',
             }}
           >
             {subtitle}
@@ -74,7 +74,7 @@ export function Program({ title, subtitle, disclaimer, items }: ProgramProps) {
               >
                 <span
                   className="mt-2.5 w-2 h-2 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: '#F5B82E' }}
+                  style={{ backgroundColor: '#DFC938' }}
                 />
                 {item}
               </li>

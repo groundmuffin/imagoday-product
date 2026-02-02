@@ -68,7 +68,7 @@ export function SpeakerModal({
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl"
         style={{
           backgroundColor: '#1A3A3A',
-          border: '1px solid rgba(245, 184, 46, 0.2)',
+          border: '1px solid rgba(223, 201, 56, 0.2)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -77,14 +77,14 @@ export function SpeakerModal({
           onClick={onClose}
           className="absolute top-4 right-4 z-20 p-2 rounded-full transition-colors"
           style={{
-            backgroundColor: 'rgba(42, 74, 74, 0.9)',
+            backgroundColor: 'rgba(150, 241, 217, 0.9)',
             color: '#F5F0E0',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(245, 184, 46, 0.3)'
+            e.currentTarget.style.backgroundColor = 'rgba(223, 201, 56, 0.3)'
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(42, 74, 74, 0.9)'
+            e.currentTarget.style.backgroundColor = 'rgba(150, 241, 217, 0.9)'
           }}
         >
           <X className="w-5 h-5" />
@@ -133,7 +133,7 @@ export function SpeakerModal({
               className="text-lg mb-1"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                color: '#F5B82E',
+                color: '#DFC938',
               }}
             >
               {title}
@@ -153,9 +153,9 @@ export function SpeakerModal({
             <div
               className="inline-block px-3 py-1 rounded-full text-xs mb-6"
               style={{
-                backgroundColor: 'rgba(245, 184, 46, 0.15)',
-                color: '#F5B82E',
-                border: '1px solid rgba(245, 184, 46, 0.3)',
+                backgroundColor: 'rgba(223, 201, 56, 0.15)',
+                color: '#DFC938',
+                border: '1px solid rgba(223, 201, 56, 0.3)',
               }}
             >
               {expertise}
@@ -174,7 +174,7 @@ export function SpeakerModal({
 
             {/* Social links */}
             {(linkedIn || website) && (
-              <div className="flex gap-4 pt-4 border-t" style={{ borderColor: 'rgba(245, 184, 46, 0.1)' }}>
+              <div className="flex gap-4 pt-4 border-t" style={{ borderColor: 'rgba(223, 201, 56, 0.1)' }}>
                 {linkedIn && (
                   <a
                     href={linkedIn}
@@ -182,7 +182,7 @@ export function SpeakerModal({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm transition-colors"
                     style={{ color: 'rgba(245, 240, 224, 0.6)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#F5B82E'}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#DFC938'}
                     onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(245, 240, 224, 0.6)'}
                   >
                     <Linkedin className="w-4 h-4" />
@@ -196,7 +196,7 @@ export function SpeakerModal({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm transition-colors"
                     style={{ color: 'rgba(245, 240, 224, 0.6)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#F5B82E'}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#DFC938'}
                     onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(245, 240, 224, 0.6)'}
                   >
                     <Globe className="w-4 h-4" />

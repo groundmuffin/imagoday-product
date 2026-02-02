@@ -36,9 +36,9 @@ export function SwipeableCards({ images }: SwipeableCardsProps) {
   }
 
   return (
-    <div className="relative w-full max-w-sm mx-auto">
+    <div className="relative w-full max-w-[280px] sm:max-w-sm mx-auto">
       {/* Card stack */}
-      <div className="relative w-full h-[400px] md:h-[450px]">
+      <div className="relative w-full h-[320px] sm:h-[400px] md:h-[450px]">
         <Swiper
           effect="cards"
           grabCursor={true}
@@ -57,7 +57,7 @@ export function SwipeableCards({ images }: SwipeableCardsProps) {
               <div
                 className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl select-none"
                 style={{
-                  border: '2px solid rgba(245, 184, 46, 0.2)',
+                  border: '2px solid rgba(223, 201, 56, 0.2)',
                   backgroundColor: '#1A3A3A',
                 }}
               >
@@ -90,7 +90,7 @@ export function SwipeableCards({ images }: SwipeableCardsProps) {
           disabled={currentIndex === 0}
           className="p-3 rounded-full transition-all disabled:opacity-30"
           style={{
-            backgroundColor: 'rgba(42, 74, 74, 0.5)',
+            backgroundColor: 'rgba(150, 241, 217, 0.5)',
             color: '#F5F0E0',
           }}
         >
@@ -117,8 +117,8 @@ export function SwipeableCards({ images }: SwipeableCardsProps) {
           disabled={currentIndex === images.length - 1}
           className="p-3 rounded-full transition-all disabled:opacity-30"
           style={{
-            backgroundColor: 'rgba(245, 184, 46, 0.3)',
-            color: '#F5B82E',
+            backgroundColor: 'rgba(223, 201, 56, 0.3)',
+            color: '#DFC938',
           }}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

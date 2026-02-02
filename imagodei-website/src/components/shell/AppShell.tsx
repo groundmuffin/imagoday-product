@@ -14,7 +14,6 @@ export interface NavigationItem {
 export interface AppShellProps {
   children: React.ReactNode
   navigationItems: NavigationItem[]
-  registerUrl?: string
   registerLabel?: string
   languageLabel?: string
   logoText?: string
@@ -26,10 +25,9 @@ export interface AppShellProps {
 export function AppShell({
   children,
   navigationItems,
-  registerUrl = '#',
   registerLabel = 'Register',
   languageLabel = 'Language',
-  logoText = 'Imago Dei',
+  logoText = 'Imago Dei 2.0',
   currentLanguage = 'en',
   onLanguageChange,
   onNavigate,
@@ -59,7 +57,6 @@ export function AppShell({
 
       <MainNav
         navigationItems={navigationItems}
-        registerUrl={registerUrl}
         registerLabel={registerLabel}
         logoText={logoText}
         currentLanguage={currentLanguage}
@@ -72,7 +69,6 @@ export function AppShell({
       <MobileNav
         isOpen={isMobileMenuOpen}
         navigationItems={navigationItems}
-        registerUrl={registerUrl}
         registerLabel={registerLabel}
         languageLabel={languageLabel}
         currentLanguage={currentLanguage}

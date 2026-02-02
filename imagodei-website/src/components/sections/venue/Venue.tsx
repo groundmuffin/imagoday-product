@@ -27,22 +27,22 @@ export function Venue({ title, description, parkingInfo, mapsUrl, mapsLabel, ima
         <div
           className="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(42, 74, 74, 0.3) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(150, 241, 217, 0.3) 0%, transparent 70%)',
           }}
         />
         <div
           className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(245, 184, 46, 0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(223, 201, 56, 0.08) 0%, transparent 70%)',
           }}
         />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <h2
-            className="text-5xl md:text-6xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{
               fontFamily: "'Source Serif 4', serif",
               color: '#F5F0E0',
@@ -53,20 +53,20 @@ export function Venue({ title, description, parkingInfo, mapsUrl, mapsLabel, ima
           <div
             className="mx-auto h-1 w-24 rounded-full"
             style={{
-              background: 'linear-gradient(to right, #2A4A4A, #F5B82E)',
+              background: 'linear-gradient(to right, #96F1D9, #DFC938)',
             }}
           />
         </div>
 
         {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Swipeable Images */}
-          <div className="order-first md:order-first">
+          <div className="w-full px-2 sm:px-0">
             <VenueSwiper images={images} />
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left">
             <p
               className="text-lg md:text-xl leading-relaxed"
               style={{
@@ -84,7 +84,7 @@ export function Venue({ title, description, parkingInfo, mapsUrl, mapsLabel, ima
             >
               <Car
                 className="w-5 h-5 mt-1 flex-shrink-0"
-                style={{ color: '#F5B82E' }}
+                style={{ color: '#DFC938' }}
               />
               <p
                 className="text-base md:text-lg"
@@ -102,15 +102,15 @@ export function Venue({ title, description, parkingInfo, mapsUrl, mapsLabel, ima
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-base font-medium transition-all hover:scale-105"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                backgroundColor: 'rgba(245, 184, 46, 0.15)',
-                color: '#F5B82E',
-                border: '1px solid rgba(245, 184, 46, 0.3)',
+                backgroundColor: 'rgba(223, 201, 56, 0.15)',
+                color: '#DFC938',
+                border: '1px solid rgba(223, 201, 56, 0.3)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(245, 184, 46, 0.25)'
+                e.currentTarget.style.backgroundColor = 'rgba(223, 201, 56, 0.25)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(245, 184, 46, 0.15)'
+                e.currentTarget.style.backgroundColor = 'rgba(223, 201, 56, 0.15)'
               }}
             >
               <MapPin className="w-5 h-5" />
